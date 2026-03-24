@@ -1,31 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
-  <meta property="og:url" content="URL OF THE WEBSITE" />
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta name="description" content="SA-Radar: Attribute-Controllable Radar Simulation via Waveform Parameter Embedding. A radar simulation approach enabling controllable and efficient generation of radar cubes for autonomous driving.">
+  <meta property="og:title" content="SA-Radar: Simulate Any Radar" />
+  <meta property="og:description" content="Attribute-Controllable Radar Simulation via Waveform Parameter Embedding — enabling controllable, realistic RAD tensor generation for autonomous driving." />
+  <meta property="og:url" content="https://zhuxing0.github.io/projects/SA-Radar/" />
+  <meta property="og:image" content="static/images/radartop_00.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:title" content="SA-Radar: Simulate Any Radar">
+  <meta name="twitter:description" content="Attribute-Controllable Radar Simulation via Waveform Parameter Embedding for autonomous driving.">
+  <meta name="twitter:image" content="static/images/radartop_00.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="keywords" content="radar simulation, autonomous driving, waveform parameter embedding, RAD tensor, object detection, semantic segmentation, SA-Radar">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-  <title>Simulate Any Radar</title>
+  <title>SA-Radar: Simulate Any Radar</title>
   <link rel="icon" type="image/x-icon" href="static/images/demon_.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -44,800 +37,947 @@
   <script src="static/js/index.js"></script>
 
   <style>
+    /* ---- Reset & Base ---- */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    /* ---- Sticky Navbar ---- */
+    .sa-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid #e8e8e8;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .sa-navbar .navbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .sa-navbar .site-brand {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #3273dc;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .sa-navbar .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+    }
+
+    .sa-navbar .nav-links a {
+      font-size: 0.88rem;
+      color: #555;
+      text-decoration: none;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .sa-navbar .nav-links a:hover {
+      background: #f0f4ff;
+      color: #3273dc;
+    }
+
+    /* ---- Hero header ---- */
+    .hero-header {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 40%, #1565c0 100%);
+      color: #fff;
+      padding: 3.5rem 1.5rem 3rem;
+    }
+
+    .hero-header .publication-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.35;
+      margin-bottom: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-header .publication-title {
+        font-size: 1.4rem;
+      }
+    }
+
+    .hero-header .publication-authors {
+      font-family: 'Google Sans', sans-serif;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .hero-header .publication-authors a {
+      color: #90caf9 !important;
+    }
+
+    .hero-header .publication-authors a:hover {
+      color: #fff !important;
+      text-decoration: underline;
+    }
+
+    .hero-header .affiliations {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.92rem;
+      margin-top: 0.5rem;
+    }
+
+    .hero-header .author-note {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.88rem;
+    }
+
+    /* ---- Link buttons in hero ---- */
+    .hero-header .button.is-dark {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.4);
+      color: #fff;
+      transition: background 0.2s;
+    }
+
+    .hero-header .button.is-dark:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* ---- Section cards ---- */
+    .section-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 2rem 2.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-card .section-title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a237e;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e8eaf6;
+    }
+
+    .section-card .section-subtitle {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #283593;
+      margin: 1.2rem 0 0.6rem;
+    }
+
+    /* ---- Abstract section ---- */
+    #abstract {
+      background: #e8eaf6;
+      padding: 2.5rem 1.5rem;
+    }
+
+    /* ---- Interpolation sliders ---- */
     .interpolation-image {
-        width: 100%; /* 图像宽度100%，适应容器 */
-        height: auto; /* 自动调整高度，保持比例 */
-        max-height: 300px; /* 设置最大高度，确保大小一致 */
-        object-fit: cover; /* 保持图像比例并填充容器 */
-        margin-bottom: 1px; /* 减小图像下方的外边距 */
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+      margin-bottom: 1px;
+      border-radius: 6px;
     }
 
     .interpolation-panel {
-        justify-content: center; /* 居中对齐列 */
+      justify-content: center;
     }
 
     .interpolation-video-column {
-        display: flex; /* 使用 flexbox 布局 */
-        flex-direction: column; /* 垂直排列 */
-        align-items: center; /* 居中对齐内容 */
-        justify-content: center; /* 垂直居中 */
-        width: 100%; /* 宽度占满 */
-        max-width: 300px; /* 设置最大宽度 */
-        margin: 0; /* 水平居中  auto */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 300px;
+      margin: 0;
     }
 
     .columns.is-vcentered {
-        margin: 0; /* 清除外边距 */
-        padding: 0; /* 清除内边距 */
+      margin: 0;
+      padding: 0;
     }
 
     .column {
-        flex: 1; /* 确保每列均分 */
-        padding: 10; /* 去除内边距，确保更紧凑 */
+      flex: 1;
+      padding: 10px;
     }
 
-    /* 设置滑条的样式 */
     .slider {
-        width: 100%; /* 确保滑条填充容器宽度 */
-        margin-top: 1px; /* 添加滑条与图像之间的间距 */
+      width: 100%;
+      margin-top: 1px;
     }
 
-    #video_gallery_1_title {
-        background-color: #f0f8ff; /* 设置您想要的背景颜色 */
+    /* ---- Video Gallery 1 ---- */
+    .gallery-section-header {
+      background: #1a237e;
+      color: #fff;
+      padding: 1.5rem 2rem 1rem;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .gallery-section-header h2 {
+      color: #fff !important;
+      margin-bottom: 0.3rem;
+    }
+
+    .gallery-section-header p {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.93rem;
+    }
+
+    div.video_2 {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      background: #fff;
+      border-radius: 0 0 12px 12px;
+      padding: 1rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      margin-bottom: 2rem;
+    }
+
+    div.video_container {
+      display: grid;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    div.video_container video {
+      grid-column: 1;
+      grid-row: 1;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    div.video_container div.caption {
+      grid-column: 1;
+      grid-row: 1;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background: transparent;
+      margin: 0;
+      padding: 0;
+    }
+
+    div.video_container div.caption div {
+      margin: 0 auto;
+      display: none;
+      font-size: 1.4em;
+      font-weight: bold;
+      padding: 25px;
+      text-align: center;
+      color: white;
+    }
+
+    /* ---- Comparison grid (Gallery 2) ---- */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .comparison-pair {
+      background: #f5f5f5;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .comparison-pair video {
+      width: 100%;
+      display: block;
+      margin: 0;
+    }
+
+    .comparison-pair .pair-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 0.4rem 0;
+      background: #e8eaf6;
+      color: #283593;
+    }
+
+    .comparison-pair .pair-label.real {
+      background: #e8f5e9;
+      color: #1b5e20;
+    }
+
+    .comparison-pair .pair-label.sim {
+      background: #e3f2fd;
+      color: #0d47a1;
+    }
+
+    .comparison-row-label {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #555;
+      margin: 0.8rem 0 0.3rem;
+      text-align: center;
+    }
+
+    /* ---- BibTeX ---- */
+    .bibtex-box pre {
+      background: #f0f4ff;
+      border-left: 4px solid #3273dc;
+      border-radius: 0 8px 8px 0;
+      padding: 1.2rem 1.5rem;
+      font-size: 0.88rem;
+      overflow-x: auto;
+    }
+
+    /* ---- Back to top ---- */
+    #back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      background: #3273dc;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(50,115,220,0.35);
+      z-index: 999;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    #back-to-top:hover {
+      background: #1a237e;
+      transform: translateY(-2px);
+    }
+
+    #back-to-top.visible {
+      display: flex;
+    }
+
+    /* ---- Footer ---- */
+    .sa-footer {
+      background: #1a237e;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.88rem;
+      margin-top: 2rem;
+    }
+
+    .sa-footer a {
+      color: #90caf9;
+    }
+
+    /* ---- Utility ---- */
+    .page-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .tag-badge {
+      display: inline-block;
+      background: #e8eaf6;
+      color: #283593;
+      border-radius: 12px;
+      padding: 0.15rem 0.7rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin: 0.15rem;
+    }
+
+    @media (hover: none) {
+      div.video_wrapper { width: 100%; }
+    }
+
+    @media (hover: hover) {
+      div.video_wrapper { width: 50%; }
     }
   </style>
-
 </head>
-
 
 <body>
 
+  <!-- ======== Sticky Navigation ======== -->
+  <nav class="sa-navbar">
+    <div class="navbar-inner">
+      <a class="site-brand" href="#">SA-Radar</a>
+      <div class="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#framework">Framework</a>
+        <a href="#demos">Demos</a>
+        <a href="#video-gallery-1">Gallery&nbsp;1</a>
+        <a href="#video-gallery-2">Gallery&nbsp;2</a>
+        <a href="#bibtex">BibTeX</a>
+      </div>
+    </div>
+  </nav>
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Simulate Any Radar: Attribute-Controllable Radar Simulation via Waveform Parameter Embedding
-            </h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="https://scholar.google.com.hk/citations?user=v0iwkScAAAAJ&hl=en&oi=sra">Weiqing Xiao</a><sup>1,7*</sup>
-              </span>
-              <span class="author-block">
-                <a href="">Hao Huang</a><sup>2,7*</sup>
-              </span>
-              <span class="author-block">
-                <a href="">Chonghao Zhong</a><sup>3,7*</sup>
-              </span>
-              <span class="author-block">
-                <a href="">Yujie Lin</a><sup>2,7</sup>
-              </span>
-              <span class="author-block">
-                <a href="">Nan Wang</a><sup>7</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com.hk/citations?hl=en&user=_tz64W0AAAAJ">Xiaoxue Chen</a><sup>4,7</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com.hk/citations?hl=en&user=HsV0WbwAAAAJ">Zhaoxi Chen</a><sup>5</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com.hk/citations?hl=en&user=P4efBMcAAAAJ">Saining Zhang</a><sup>5</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com.hk/citations?hl=en&user=XISZWXgAAAAJ">Shuocheng Yang</a><sup>6</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com.hk/citations?hl=en&user=NMSccqAAAAAJ">Pierre Merriaux</a><sup>8</sup>
-              </span>
-              <span class="author-block">
-                <a href="">Lei Lei</a><sup>8</sup>
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com.hk/citations?user=ygQznUQAAAAJ&hl=en">Hao Zhao</a><sup>4,7<svg class="svg-inline--fa fa-envelope fa-w-16" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg><!-- <i class="fa fa-envelope"></i> Font Awesome fontawesome.com --></sup>
-              </span>
-            </div>
+  <!-- ======== Hero Header ======== -->
+  <section class="hero-header">
+    <div class="container is-max-desktop has-text-centered">
+      <h1 class="publication-title">
+        Simulate Any Radar: Attribute-Controllable Radar Simulation via Waveform Parameter Embedding
+      </h1>
 
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>Beihang University</span>
-              <span class="author-block"><sup>2</sup>Beijing Jiaotong University</span>
-              <span class="author-block"><sup>3</sup>Beijing Institute of Technology</span>
-              <span class="author-block"><sup>4</sup>AIR, Tsinghua University</span>
-              <span class="author-block"><sup>5</sup>Nanyang Technological University</span>
-              <span class="author-block"><sup>6</sup>SVM, Tsinghua University</span>
-              <span class="author-block"><sup>7</sup>Lightwheel AI</span>
-              <span class="author-block"><sup>8</sup>LeddarTech</span>
-              <br>
-              <span class="author-block"><sup>*</sup>Equal Contribution&nbsp; </span>
-              <span class="author-block"><sup><svg class="svg-inline--fa fa-envelope fa-w-16" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg><!-- <i class="fa fa-envelope"></i> Font Awesome fontawesome.com --></sup>Corresponding Author</span>
-            </div>
+      <!-- Authors -->
+      <div class="publication-authors mb-3">
+        <span class="author-block">
+          <a href="https://scholar.google.com.hk/citations?user=v0iwkScAAAAJ&hl=en&oi=sra">Weiqing Xiao</a><sup>1,7*</sup>
+        </span>&#8202;
+        <span class="author-block">
+          <a href="">Hao Huang</a><sup>2,7*</sup>
+        </span>&#8202;
+        <span class="author-block">
+          <a href="">Chonghao Zhong</a><sup>3,7*</sup>
+        </span>&#8202;
+        <span class="author-block">
+          <a href="">Yujie Lin</a><sup>2,7</sup>
+        </span>&#8202;
+        <span class="author-block">
+          <a href="">Nan Wang</a><sup>7</sup>
+        </span>&#8202;
+        <span class="author-block">
+          <a href="https://scholar.google.com.hk/citations?hl=en&user=_tz64W0AAAAJ">Xiaoxue Chen</a><sup>4,7</sup>
+        </span>&#8202;
+        <span class="author-block">
+          <a href="https://scholar.google.com.hk/citations?hl=en&user=HsV0WbwAAAAJ">Zhaoxi Chen</a><sup>5</sup>
+        </span>&#8202;
+        <span class="author-block">
+          <a href="https://scholar.google.com.hk/citations?hl=en&user=P4efBMcAAAAJ">Saining Zhang</a><sup>5</sup>
+        </span>&#8202;
+        <span class="author-block">
+          <a href="https://scholar.google.com.hk/citations?hl=en&user=XISZWXgAAAAJ">Shuocheng Yang</a><sup>6</sup>
+        </span>&#8202;
+        <span class="author-block">
+          <a href="https://scholar.google.com.hk/citations?hl=en&user=NMSccqAAAAAJ">Pierre Merriaux</a><sup>8</sup>
+        </span>&#8202;
+        <span class="author-block">
+          <a href="">Lei Lei</a><sup>8</sup>
+        </span>&#8202;
+        <span class="author-block">
+          <a href="https://scholar.google.com.hk/citations?user=ygQznUQAAAAJ&hl=en">Hao Zhao</a><sup>4,7✉</sup>
+        </span>
+      </div>
 
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- <paper link"-->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2506.03134"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <!-- <arXiv link"-->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2506.03134"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <!-- <code link"-->
-                <span class="link-block">
-                  <a href="https://github.com/zhuxing0/SA-Radar"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                        <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                    </a>
-                </span>
-              </div>
+      <!-- Affiliations -->
+      <div class="affiliations mb-3">
+        <sup>1</sup>Beihang University &nbsp;
+        <sup>2</sup>Beijing Jiaotong University &nbsp;
+        <sup>3</sup>Beijing Institute of Technology &nbsp;
+        <sup>4</sup>AIR, Tsinghua University &nbsp;
+        <sup>5</sup>Nanyang Technological University<br>
+        <sup>6</sup>SVM, Tsinghua University &nbsp;
+        <sup>7</sup>Lightwheel AI &nbsp;
+        <sup>8</sup>LeddarTech
+      </div>
 
-            </div>
-          </div>
-        </div>
+      <div class="author-note mb-4">
+        <sup>*</sup>Equal Contribution &nbsp;&nbsp; <sup>✉</sup>Corresponding Author
+      </div>
+
+      <!-- Tags -->
+      <div class="mb-4">
+        <span class="tag-badge">Radar Simulation</span>
+        <span class="tag-badge">Autonomous Driving</span>
+        <span class="tag-badge">Waveform Embedding</span>
+        <span class="tag-badge">3D Object Detection</span>
+        <span class="tag-badge">Semantic Segmentation</span>
+      </div>
+
+      <!-- Action links -->
+      <div class="publication-links">
+        <span class="link-block">
+          <a href="https://arxiv.org/abs/2506.03134"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon"><i class="fas fa-file-pdf"></i></span>
+            <span>Paper</span>
+          </a>
+        </span>
+        <span class="link-block">
+          <a href="https://arxiv.org/abs/2506.03134"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon"><i class="ai ai-arxiv"></i></span>
+            <span>arXiv</span>
+          </a>
+        </span>
+        <span class="link-block">
+          <a href="https://github.com/zhuxing0/SA-Radar"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon"><i class="fab fa-github"></i></span>
+            <span>Code</span>
+          </a>
+        </span>
       </div>
     </div>
   </section>
 
-  <!-- Paper abstract -->
-  <section class="section hero is-light" id="abstract">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              We present <strong>SA-Radar</strong> (Simulate Any Radar), a radar simulation approach that enables controllable and efficient generation of radar cubes conditioned on customizable radar attributes. Unlike prior generative or physics-based simulators, SA-Radar integrates both paradigms through a waveform-parameterized attribute embedding. We design ICFAR-Net, a 3D U-Net conditioned on radar attributes encoded via waveform parameters, which captures signal variations induced by different radar configurations. This formulation bypasses the need for detailed radar hardware specifications and allows efficient simulation of range-azimuth-Doppler (RAD) tensors across diverse sensor settings. We further construct a mixed real-simulated dataset with attribute annotations to robustly train the network. Extensive evaluations on multiple downstream tasks—including 2D/3D object detection and radar semantic segmentation—demonstrate that SA-Radar’s simulated data is both realistic and effective, consistently improving model performance when used standalone or in combination with real data. Our framework also supports simulation in novel sensor viewpoints and edited scenes, showcasing its potential as a general-purpose radar data engine for autonomous driving applications.
-              Code and additional materials are available at
-              <a href="https://github.com/zhuxing0/SA-Radar" target="_blank">
-                https://github.com/zhuxing0/SA-Radar.
-              </a>
-            </p>
+  <!-- ======== Main content ======== -->
+  <div class="page-wrapper">
+
+    <!-- Abstract -->
+    <div class="section-card" id="abstract">
+      <h2 class="section-title">Abstract</h2>
+      <div class="content has-text-justified">
+        <p>
+          We present <strong>SA-Radar</strong> (Simulate Any Radar), a radar simulation approach that enables controllable and efficient generation of radar cubes conditioned on customizable radar attributes. Unlike prior generative or physics-based simulators, SA-Radar integrates both paradigms through a waveform-parameterized attribute embedding. We design ICFAR-Net, a 3D U-Net conditioned on radar attributes encoded via waveform parameters, which captures signal variations induced by different radar configurations. This formulation bypasses the need for detailed radar hardware specifications and allows efficient simulation of range-azimuth-Doppler (RAD) tensors across diverse sensor settings. We further construct a mixed real-simulated dataset with attribute annotations to robustly train the network. Extensive evaluations on multiple downstream tasks—including 2D/3D object detection and radar semantic segmentation—demonstrate that SA-Radar's simulated data is both realistic and effective, consistently improving model performance when used standalone or in combination with real data. Our framework also supports simulation in novel sensor viewpoints and edited scenes, showcasing its potential as a general-purpose radar data engine for autonomous driving applications.
+        </p>
+        <p>
+          Code and additional materials are available at
+          <a href="https://github.com/zhuxing0/SA-Radar" target="_blank">https://github.com/zhuxing0/SA-Radar</a>.
+        </p>
+      </div>
+    </div>
+
+    <!-- What can it be used for -->
+    <div class="section-card">
+      <h2 class="section-title">What Can It Be Used For?</h2>
+      <img src="./static/images/radartop_00.png" style="width:100%; border-radius:8px;" alt="SA-Radar overview figure">
+      <div class="content has-text-justified mt-4">
+        <p>
+          (a) <strong>SA-Radar</strong> enables controllable and realistic radar simulation by conditioning on customizable radar attributes. It supports flexible scene editing such as <strong>attribute modification, actor removal, and novel trajectories</strong>. (b) <strong>SA-Radar</strong> improves performance on various tasks including semantic segmentation, 2D/3D object detection. <strong>In all settings</strong>, SA-Radar's synthetic data either matches or surpasses real data, and provides consistent gains when combined with real-world datasets.
+        </p>
+      </div>
+    </div>
+
+    <!-- Framework -->
+    <div class="section-card" id="framework">
+      <h2 class="section-title">Framework</h2>
+      <img src="./static/images/main_00.png" style="width:100%; border-radius:8px;" alt="SA-Radar framework figure">
+      <div class="content has-text-justified mt-4">
+        <p>
+          We first construct <strong>a uniform reflection environment tensor E</strong> that records reflection points from both physical objects and background clutter. Then, we simulate the radar cube in the current reflection environment by integrating <strong>the radar attributes embedding</strong> in a 3D U-Net (referred to as ICFAR-Net in this paper). The radar attributes in ICFAR-Net are characterized only by <strong>the waveform parameters</strong> of the standard 3D reflection signals in each dimension, thus overcoming the need for radar-specific details. Extensive experiments show that the simulation data from our approach significantly enhances the performance of existing models on a wide range of downstream tasks, demonstrating its potential as a generalized radar data engine for autonomous driving applications.
+        </p>
+      </div>
+    </div>
+
+    <!-- Demonstrations -->
+    <div class="section-card" id="demos">
+      <h2 class="section-title">Demonstrations</h2>
+
+      <!-- Accurate Simulation -->
+      <h3 class="section-subtitle">Accurate Radar Simulation</h3>
+      <div class="content has-text-justified">
+        <p>
+          Our SA-Radar can simulate radar cube (range-azimuth-Doppler tensor) for any scene. We visualize the range-azimuth projection and the range-Doppler projection of the radar cube separately (both taking the maximum value). As shown in the figure, the simulation results of SA-Radar are highly similar to the ground truth. More examples are shown in <a href="#video-gallery-1">Video Gallery 1</a>.
+        </p>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-2.7 has-text-centered">
+          <img src="./static/images/radar_rgb.jpg" class="has-text-centered" alt="RGB image" style="border-radius:6px;">
+          <p class="mt-2"><strong>RGB image</strong></p>
+        </div>
+        <div class="column is-2.7 has-text-centered">
+          <img src="./static/images/radar_sim.jpg" class="has-text-centered" alt="Simulated radar cube" style="border-radius:6px;">
+          <p class="mt-2"><strong>Sim radar cube</strong></p>
+        </div>
+        <div class="column is-2.7 has-text-centered">
+          <img src="./static/images/radar_gt.jpg" class="has-text-centered" alt="Ground truth radar cube" style="border-radius:6px;">
+          <p class="mt-2"><strong>Ground truth radar cube</strong></p>
+        </div>
+      </div>
+
+      <!-- Attribute Modification -->
+      <h3 class="section-subtitle">Attribute Modification</h3>
+      <div class="content has-text-justified">
+        <p>
+          We can directly modify the waveform parameters input to SA-Radar (specifically its ICFAR-Net) to simulate radar cubes with different radar attributes for the same scene. Use the slider here to linearly interpolate between radar A and radar B for novel radar simulation.
+        </p>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-2.5 has-text-centered">
+          <img src="./static/images/ra_begin.png" class="interpolation-image" alt="Radar A">
+          <p><strong>Radar A</strong></p>
+        </div>
+        <div class="column interpolation-video-column">
+          <div id="interpolation-image-wrapper_1">Loading...</div>
+          <input class="slider is-fullwidth is-large is-info"
+                id="interpolation-slider_1"
+                step="1" min="0" max="8" value="0" type="range">
+          <p class="is-bold">Novel Radar</p>
+        </div>
+        <div class="column is-2.5 has-text-centered">
+          <img src="./static/images/ra_end.png" class="interpolation-image" alt="Radar B">
+          <p class="is-bold"><strong>Radar B</strong></p>
+        </div>
+      </div>
+
+      <!-- Novel Trajectories -->
+      <h3 class="section-subtitle">Novel Trajectories</h3>
+      <div class="content has-text-justified">
+        <p>
+          Our SA-Radar allows free editing of the viewpoints to obtain simulated images in novel viewpoints. The following figures show the results of shifting the viewpoint left and right by 5 meters, respectively.
+        </p>
+      </div>
+      <div class="columns is-vcentered interpolation-panel">
+        <div class="column is-2.5 has-text-centered">
+          <img src="./static/images/right_0.jpg" class="interpolation-image" alt="Original viewpoint">
+          <p><strong>Original viewpoint</strong></p>
+        </div>
+        <div class="column interpolation-video-column">
+          <div id="interpolation-image-wrapper_2">Loading...</div>
+          <input class="slider is-fullwidth is-large is-info"
+                id="interpolation-slider_2"
+                step="1" min="0" max="50" value="0" type="range">
+          <p class="is-bold">5 meters to the left</p>
+        </div>
+        <div class="column interpolation-video-column">
+          <div id="interpolation-image-wrapper_3">Loading...</div>
+          <input class="slider is-fullwidth is-large is-info"
+                id="interpolation-slider_3"
+                step="1" min="0" max="50" value="0" type="range">
+          <p class="is-bold">5 meters to the right</p>
+        </div>
+      </div>
+
+      <!-- Actor Removal -->
+      <h3 class="section-subtitle">Actor Removal</h3>
+      <div class="content has-text-justified">
+        <p>
+          Our SA-Radar realizes the removal function by directly modifying the reflection intensity of the reflection points on the actors. The following figures show the simulated radar images after removing the car and truck respectively.
+        </p>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-2.7 has-text-centered">
+          <img src="./static/images/radar_rgb.jpg" class="has-text-centered" alt="RGB image" style="border-radius:6px;">
+          <p class="mt-2"><strong>RGB image</strong></p>
+        </div>
+        <div class="column is-2.7 has-text-centered">
+          <img src="./static/images/ra_begin.png" class="has-text-centered" alt="Original simulation" style="border-radius:6px;">
+          <p class="mt-2"><strong>Original simulation</strong></p>
+        </div>
+        <div class="column is-2.7 has-text-centered">
+          <img src="./static/images/remove_1.jpg" class="has-text-centered" alt="Car removed" style="border-radius:6px;">
+          <p class="mt-2"><strong>Simulation with car removed</strong></p>
+        </div>
+        <div class="column is-2.7 has-text-centered">
+          <img src="./static/images/remove_2.jpg" class="has-text-centered" alt="Truck removed" style="border-radius:6px;">
+          <p class="mt-2"><strong>Simulation with truck removed</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Gallery 1 -->
+    <div id="video-gallery-1">
+      <div class="gallery-section-header">
+        <h2 class="title is-3 has-text-centered">Video Gallery 1</h2>
+        <h4 class="subtitle has-text-centered" style="color:rgba(255,255,255,0.8);">Examples from the RADDet Dataset</h4>
+        <p class="has-text-centered" style="color:rgba(255,255,255,0.72); font-size:0.92rem;">
+          We show multiple examples of radar simulation and scene editing in the following videos. Due to file size limitations, the videos are compressed and their quality may be affected.
+          Each video displays an RGB image corresponding to five types of radar cube slices: real, simulated, modified attribute, actor-removed and novel trajectory.
+        </p>
+      </div>
+
+      <div class="video_2">
+        <div class="video_wrapper">
+          <div class="video_container">
+            <video autoplay muted loop controls>
+              <source src="static/videos/raddet/01.mp4" type="video/mp4">
+            </video>
+            <div class="caption"><div>Realistic driving scene in RADDet dataset.</div></div>
+            <p class="has-text-centered mt-1">Sequence 1</p>
+          </div>
+        </div>
+
+        <div class="video_wrapper">
+          <div class="video_container">
+            <video autoplay muted loop controls>
+              <source src="static/videos/raddet/02.mp4" type="video/mp4">
+            </video>
+            <div class="caption"><div>Realistic driving scene in RADDet dataset.</div></div>
+            <p class="has-text-centered mt-1">Sequence 2</p>
+          </div>
+        </div>
+
+        <div class="video_wrapper">
+          <div class="video_container">
+            <video autoplay muted loop controls>
+              <source src="static/videos/raddet/03.mp4" type="video/mp4">
+            </video>
+            <div class="caption"><div>Realistic driving scene in RADDet dataset.</div></div>
+            <p class="has-text-centered mt-1">Sequence 3</p>
+          </div>
+        </div>
+
+        <div class="video_wrapper">
+          <div class="video_container">
+            <video autoplay muted loop controls>
+              <source src="static/videos/raddet/04.mp4" type="video/mp4">
+            </video>
+            <div class="caption"><div>Realistic driving scene in RADDet dataset.</div></div>
+            <p class="has-text-centered mt-1">Sequence 4</p>
+          </div>
+        </div>
+
+        <div class="video_wrapper">
+          <div class="video_container">
+            <video autoplay muted loop controls>
+              <source src="static/videos/raddet/05.mp4" type="video/mp4">
+            </video>
+            <div class="caption"><div>Realistic driving scene in RADDet dataset.</div></div>
+            <p class="has-text-centered mt-1">Sequence 5</p>
+          </div>
+        </div>
+
+        <div class="video_wrapper">
+          <div class="video_container">
+            <video autoplay muted loop controls>
+              <source src="static/videos/raddet/06.mp4" type="video/mp4">
+            </video>
+            <div class="caption"><div>Realistic driving scene in RADDet dataset.</div></div>
+            <p class="has-text-centered mt-1">Sequence 6</p>
+          </div>
+        </div>
+
+        <div class="video_wrapper">
+          <div class="video_container">
+            <video autoplay muted loop controls>
+              <source src="static/videos/raddet/07.mp4" type="video/mp4">
+            </video>
+            <div class="caption"><div>Realistic driving scene in RADDet dataset.</div></div>
+            <p class="has-text-centered mt-1">Sequence 7</p>
+          </div>
+        </div>
+
+        <div class="video_wrapper">
+          <div class="video_container">
+            <video autoplay muted loop controls>
+              <source src="static/videos/raddet/08.mp4" type="video/mp4">
+            </video>
+            <div class="caption"><div>Realistic driving scene in RADDet dataset.</div></div>
+            <p class="has-text-centered mt-1">Sequence 8</p>
+          </div>
+        </div>
+
+        <div class="video_wrapper">
+          <div class="video_container">
+            <video autoplay muted loop controls>
+              <source src="static/videos/raddet/09.mp4" type="video/mp4">
+            </video>
+            <div class="caption"><div>Realistic driving scene in RADDet dataset.</div></div>
+            <p class="has-text-centered mt-1">Sequence 9</p>
+          </div>
+        </div>
+
+        <div class="video_wrapper">
+          <div class="video_container">
+            <video autoplay muted loop controls>
+              <source src="static/videos/raddet/10.mp4" type="video/mp4">
+            </video>
+            <div class="caption"><div>Realistic driving scene in RADDet dataset.</div></div>
+            <p class="has-text-centered mt-1">Sequence 10</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- End paper abstract -->
 
-  <br/>
-
-  <br/>
-  <!-- Paper teaser -->
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-        <h2 class="title is-3"><center>
-          What can it be used for?
-        </center></h2>
-        
-        <!-- teaser. -->
-        <div class="hero-body">
-                <img src="./static/images/radartop_00.png" class="interpolation-image" alt="Interpolate start reference image.">
-          <div class="content has-text-justified" style="margin-bottom: 3rem;">
-            <p>
-              (a) <strong>SA-Radar</strong> enables controllable and realistic radar simulation by conditioning on customizable radar attributes. It supports flexible scene editing such as <strong>attribute modification, actor removal, and novel trajectories</strong>. (b) <strong>SA-Radar</strong> improves performance on various tasks including semantic segmentation, 2D/3D object detection. <strong>In all settings</strong>, SA-Radar’s synthetic data either matches or surpasses real data, and provides consistent gains when combined with real-world datasets.
-            </p>
-          </div>
-        </div>
-    </div>
-  </section>
-  <!-- End Paper teaser -->
-
-  <!-- framework -->
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-        <h2 class="title is-3"><center>
-          Framework
-        </center></h2>
-        <!-- teaser. -->
-        <div class="hero-body">
-                <img src="./static/images/main_00.png" class="column is-2.7 has-text-centered" alt="">
-          <div class="content has-text-justified" style="margin-bottom: 3rem;">
-            <p>
-              We first construct <strong>a uniform reflection environment tensor E</strong> that records reflection points from both physical objects and background clutter. Then, we simulate the radar cube in the current reflection environment by integrating <strong>the radar attributes embedding</strong> in a 3D U-Net (referred to as ICFAR-Net in this paper). The radar attributes in ICFAR-Net are characterized only by <strong>the waveform parameters</strong> of the standard 3D reflection signals in each dimension, thus overcoming the need for radar-specific details. Extensive experiments show that the simulation data from our approach significantly enhances the performance of existing models on a wide range of downstream tasks, demonstrating its potential as a generalized radar data engine for autonomous driving applications.
-            </p>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- End framework -->
-
-  <!-- Demonstrations -->
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-        <h2 class="title is-3"><center>
-          Demonstrations
-        </center></h2>
-
-        <!-- <div class="columns is-centered">
-        <div class="column"> -->
-          
-        <!-- Accurate radar simulation. -->
-        <h3 class="title is-4">Accurate Radar Simulation</h3>
-        <div class="content has-text-justified">
-          <p>
-            Our SA-Radar can simulate radar cube (range-azimuth-Doppler tensor) for any scene. We visualize the range-azimuth projection and the range-Doppler projection of the radar cube separately (both taking the maximum value). As shown in the figure, the simulation results of SA-Radar are highly similar to the ground truth. More examples are shown in <a href="#video_gallery_1_title">Video Gallery 1</a>.
-          </p>
-        </div>
-        <div class="columns is-centered">
-          
-          <div class="column is-2.7 has-text-centered">
-            <img src="./static/images/radar_rgb.jpg"
-                 class="has-text-centered"
-                 alt=""/>
-            <p>RGB image</p>
-          </div>
-
-          <div class="column is-2.7 has-text-centered">
-            <img src="./static/images/radar_sim.jpg"
-                 class="has-text-centered"
-                 alt=""/>
-            <p>Sim radar cube</p>
-          </div>
-
-          <div class="column is-2.7 has-text-centered">
-            <img src="./static/images/radar_gt.jpg"
-                 class="has-text-centered"
-                 alt=""/>
-            <p>Ground truth radar cube</p>
-          </div>
-          
-        </div>
-        <br/>
-
-        <!-- </div>
-        <div class="column"> -->
-
-        <!-- Attribute Modification. -->
-        <h3 class="title is-4">Attribute Modification</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can directly modify the waveform parameters input to SA-Radar (specifically its ICFAR-Net) to simulate radar cubes with different radar attributes for the same scene. Use the slider here to linearly interpolate between radar A and radar B for novel radar simulation.
-          </p>
-        </div>
-        <div class="columns is-centered">
-          
-          <div class="column is-2.5 has-text-centered">
-            <img src="./static/images/ra_begin.png"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Radar A</p>
-          </div>
-
-          <div class="column interpolation-video-column">
-              <div id="interpolation-image-wrapper_1">
-                  Loading...
-              </div>
-              <input class="slider is-fullwidth is-large is-info" 
-                    id="interpolation-slider_1" 
-                    step="1" min="0" max="8" value="0" type="range">
-              <p class="is-bold">Novel Radar</p>
-          </div>
-
-          <div class="column is-2.5 has-text-centered">
-            <img src="./static/images/ra_end.png"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">Radar B</p>
-          </div>
-        </div>
-        <br/>
-        
-        <!-- </div>
-        </div> -->
-
-
-        <!-- <div class="columns is-centered">
-        <div class="column"> -->
-
-        <!--/ Novel trajectories. -->
-        <h3 class="title is-4">Novel Trajectories</h3>
-        <div class="content has-text-justified">
-          <p>
-            Our SA-Radar allows free editing of the viewpoints to obtain simulated images in novel viewpoints. The following figures show the results of shifting the viewpoint left and right by 5 meters, respectively. 
-            <!-- Note that we did not keep the Azimuth beam pattern in the azimuth dimension in the novel viewpoint because it has little effect on the downstream task. -->
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-
-          <div class="column is-2.5 has-text-centered">
-            <img src="./static/images/right_0.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Original viewpoint</p>
-          </div>
-
-          <div class="column interpolation-video-column">
-              <div id="interpolation-image-wrapper_2">
-                  Loading...
-              </div>
-              <input class="slider is-fullwidth is-large is-info" 
-                    id="interpolation-slider_2" 
-                    step="1" min="0" max="50" value="0" type="range">
-              <p class="is-bold">5 meters to the left</p>
-          </div>
-
-          <div class="column interpolation-video-column">
-              <div id="interpolation-image-wrapper_3">
-                  Loading...
-              </div>
-              <input class="slider is-fullwidth is-large is-info" 
-                    id="interpolation-slider_3" 
-                    step="1" min="0" max="50" value="0" type="range">
-              <p class="is-bold">5 meters to the right</p>
-          </div>
-
-        </div>
-        <br/>
-
-        <!-- </div>
-        <div class="column"> -->
-
-        <!--/ Actor Removal. -->
-        <h3 class="title is-4">Actor Removal</h3>
-        <div class="content has-text-justified">
-          <p>
-            Our SA-Radar realizes the removal function by directly modifying the reflection intensity of the reflection points on the actors. The following figures show the simulated radar images after removing the car and truck respectively.
-          </p>
-        </div>
-
-        <div class="columns is-centered">
-          
-          <div class="column is-2.7 has-text-centered">
-            <img src="./static/images/radar_rgb.jpg"
-                 class="has-text-centered"
-                 alt=""/>
-            <p>RGB image</p>
-          </div>
-
-          <div class="column is-2.7 has-text-centered">
-            <img src="./static/images/ra_begin.png"
-                 class="has-text-centered"
-                 alt=""/>
-            <p>Original simulation</p>
-          </div>
-
-          <div class="column is-2.7 has-text-centered">
-            <img src="./static/images/remove_1.jpg"
-                 class="has-text-centered"
-                 alt=""/>
-            <p>Simulation with car removed</p>
-          </div>
-
-          <div class="column is-2.7 has-text-centered">
-            <img src="./static/images/remove_2.jpg"
-                 class="has-text-centered"
-                 alt=""/>
-            <p>Simulation with truck removed</p>
-          </div>
-        </div>
-        <br/>
-
-        <!-- </div>
-        </div> -->
-
-    </div>
-  </section>
-  <!-- End Demonstrations -->
-
-  <section class="hero is-large" id="video_gallery_1_title">
-    <div class="container" style="width: 100vw;">
-      <br>
-      <h2 class="title is-3 has-text-centered">Video Gallery 1</h2>
-      <h4 class="subtitle has-text-centered">Examples from the RADDet Dataset</h4>
-      <p class="has-text-centered">
-        We show multiple examples of radar simulation and scene editing in the following videos. Due to file size limitations, the videos are compressed and their quality may be affected.
-        Each video displays an RGB image corresponding to five types of radar cube slices: real, simulated, modified attribute, actor-removed and novel trajectory.  
+    <!-- Video Gallery 2 -->
+    <div class="section-card" id="video-gallery-2">
+      <h2 class="section-title">Video Gallery 2</h2>
+      <p class="subtitle has-text-centered" style="font-size:1rem; color:#555; margin-bottom:0.5rem;">
+        Comparison on Real and Simulated Sequences from the RADDet Dataset
       </p>
-
-      <br>
-    </div>
-  </section>
-
-  <div class="video_2" id="video_gallery_1" style="width: 100%">
-
-    <div class="video_wrapper">
-      <div class="video_container">
-        <video autoplay muted loop controls>
-          <source src="static/videos/raddet/01.mp4" type="video/mp4">
-        </video>
-        <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
-        </div>
-        <p class="has-text-centered">
-          Sequence 1
+      <div class="content has-text-centered" style="color:#555; font-size:0.92rem; margin-bottom:1.2rem;">
+        <p>
+          The videos below present detection results of our method (SA-Radar) compared with the baseline model on multiple sequences from the RADDet dataset.
+          Each video includes the RGB image sequence, detection results of our model, detection results of baseline model and ground-truth (GT) annotations.
+          <strong>Real Sequences</strong> refer to recordings captured from real-world driving scenarios, while <strong>Simulated Sequences</strong> are generated by our method.
+          Both RA (Range-Azimuth) and RAD (Range-Azimuth-Doppler) data are recommended for complete comparison.
         </p>
+        <p><em>Note: Due to file size limitations, all videos are compressed, which may affect visual quality.</em></p>
       </div>
-    </div>
 
-
-    <div class="video_wrapper">
-      <div class="video_container">
-        <video autoplay muted loop controls>
-          <source src="static/videos/raddet/02.mp4" type="video/mp4">
-        </video>
-        <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+      <!-- Sequence 1 -->
+      <p class="comparison-row-label">Sequence 1</p>
+      <div class="comparison-grid">
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_RADDet_test_000028to001104.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label real">Real Sequence 1</div>
         </div>
-        <p class="has-text-centered">
-          Sequence 2
-        </p>
-      </div>
-    </div>
-
-
-    <div class="video_wrapper">
-      <div class="video_container">
-        <video autoplay muted loop controls>
-          <source src="static/videos/raddet/03.mp4" type="video/mp4">
-        </video>
-        <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_sim_data_RADDet_test_sim_000028to001104.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label sim">Simulated Sequence 1</div>
         </div>
-        <p class="has-text-centered">
-          Sequence 3
-        </p>
       </div>
-    </div>
 
-    <div class="video_wrapper">
-      <div class="video_container">
-        <video autoplay muted loop controls>
-          <source src="static/videos/raddet/04.mp4" type="video/mp4">
-        </video>
-        <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+      <!-- Sequence 2 -->
+      <p class="comparison-row-label">Sequence 2</p>
+      <div class="comparison-grid">
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_RADDet_test_001116to001547.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label real">Real Sequence 2</div>
         </div>
-        <p class="has-text-centered">
-          Sequence 4
-        </p>
-      </div>
-    </div>
-
-    <div class="video_wrapper">
-      <div class="video_container">
-        <video autoplay muted loop controls>
-          <source src="static/videos/raddet/05.mp4" type="video/mp4">
-        </video>
-        <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_sim_data_RADDet_test_sim_001116to001547.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label sim">Simulated Sequence 2</div>
         </div>
-        <p class="has-text-centered">
-          Sequence 5
-        </p>
       </div>
-    </div>
 
-
-    <div class="video_wrapper">
-      <div class="video_container">
-        <video autoplay muted loop controls>
-          <source src="static/videos/raddet/06.mp4" type="video/mp4">
-        </video>
-        <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+      <!-- Sequence 3 -->
+      <p class="comparison-row-label">Sequence 3</p>
+      <div class="comparison-grid">
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_RADDet_test_001549to001970.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label real">Real Sequence 3</div>
         </div>
-        <p class="has-text-centered">
-          Sequence 6
-        </p>
-      </div>
-    </div>
-
-    <div class="video_wrapper">
-      <div class="video_container">
-        <video autoplay muted loop controls>
-          <source src="static/videos/raddet/07.mp4" type="video/mp4">
-        </video>
-        <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_sim_data_RADDet_test_sim_001549to001970.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label sim">Simulated Sequence 3</div>
         </div>
-        <p class="has-text-centered">
-          Sequence 7
-        </p>
       </div>
-    </div>
 
-    <div class="video_wrapper">
-      <div class="video_container">
-        <video autoplay muted loop controls>
-          <source src="static/videos/raddet/08.mp4" type="video/mp4">
-        </video>
-        <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+      <!-- Sequence 4 -->
+      <p class="comparison-row-label">Sequence 4</p>
+      <div class="comparison-grid">
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_RADDet_test_002611to003022.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label real">Real Sequence 4</div>
         </div>
-        <p class="has-text-centered">
-          Sequence 8
-        </p>
-      </div>
-    </div>
-
-    <div class="video_wrapper">
-      <div class="video_container">
-        <video autoplay muted loop controls>
-          <source src="static/videos/raddet/09.mp4" type="video/mp4">
-        </video>
-        <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_sim_data_RADDet_test_sim_002611to003022.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label sim">Simulated Sequence 4</div>
         </div>
-        <p class="has-text-centered">
-          Sequence 9
-        </p>
       </div>
-    </div>
 
-
-    <div class="video_wrapper">
-      <div class="video_container">
-        <video autoplay muted loop controls>
-          <source src="static/videos/raddet/10.mp4" type="video/mp4">
-        </video>
-        <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+      <!-- Sequence 5 -->
+      <p class="comparison-row-label">Sequence 5</p>
+      <div class="comparison-grid">
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_RADDet_test_003043to003427.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label real">Real Sequence 5</div>
         </div>
-        <p class="has-text-centered">
-          Sequence 10
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <section class="hero is-large" id="video_gallery_2_title">
-    <div class="container" style="width: 100vw;">
-      <br>
-      <h2 class="title is-3 has-text-centered">Video Gallery 2</h2>
-      <h4 class="subtitle has-text-centered">Comparison on Real and Simulated Sequences from the RADDet Dataset</h4>
-      <p class="has-text-centered">
-        The videos below present detection results of our method (SA-Radar) compared with the baseline model on multiple sequences from the RADDet dataset.
-        Each video includes the RGB image sequence, detection results of our model, detection results of baseline model and ground-truth (GT) annotations. Real Sequences refer to recordings captured from real-world driving scenarios, while Simulated Sequences are generated by our method.
-        Both RA (Range-Azimuth) and RAD (Range-Azimuth-Doppler) data are recommended for complete comparison.
-      </p>
-    
-      <p class="has-text-centered" style="margin-top: 10px;">
-        Note: Due to file size limitations, all videos are compressed, which may affect visual quality.
-      </p>
-      <br>
-    </div>
-  </section>
-
-  <div class="video_2" id="video_gallery_2" style="width: 100%">
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_RADDet_test_000028to001104.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_sim_data_RADDet_test_sim_003043to003427.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label sim">Simulated Sequence 5</div>
         </div>
-        <p class="has-text-centered">Real Sequence 1</p>
       </div>
-    </div>
 
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_sim_data_RADDet_test_sim_000028to001104.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+      <!-- Sequence 6 -->
+      <p class="comparison-row-label">Sequence 6</p>
+      <div class="comparison-grid">
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_RADDet_test_003660to004321.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label real">Real Sequence 6</div>
         </div>
-        <p class="has-text-centered">Simulated Sequence 1</p>
-      </div>
-    </div>
-
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_RADDet_test_001116to001547.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_sim_data_RADDet_test_sim_003660to004321.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label sim">Simulated Sequence 6</div>
         </div>
-        <p class="has-text-centered">Real Sequence 2</p>
       </div>
-    </div>
 
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_sim_data_RADDet_test_sim_001116to001547.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+      <!-- Sequence 7 -->
+      <p class="comparison-row-label">Sequence 7</p>
+      <div class="comparison-grid">
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_RADDet_test_004333to005012.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label real">Real Sequence 7</div>
         </div>
-        <p class="has-text-centered">Simulated Sequence 2</p>
-      </div>
-    </div>
-
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_RADDet_test_001549to001970.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_sim_data_RADDet_test_sim_004333to005012.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label sim">Simulated Sequence 7</div>
         </div>
-        <p class="has-text-centered">Real Sequence 3</p>
       </div>
-    </div>
 
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_sim_data_RADDet_test_sim_001549to001970.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+      <!-- Sequence 8 -->
+      <p class="comparison-row-label">Sequence 8</p>
+      <div class="comparison-grid">
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_RADDet_test_005019to005592.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label real">Real Sequence 8</div>
         </div>
-        <p class="has-text-centered">Simulated Sequence 3</p>
-      </div>
-    </div>
-
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_RADDet_test_002611to003022.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_sim_data_RADDet_test_sim_005019to005592.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label sim">Simulated Sequence 8</div>
         </div>
-        <p class="has-text-centered">Real Sequence 4</p>
       </div>
-    </div>
 
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_sim_data_RADDet_test_sim_002611to003022.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+      <!-- Sequence 9 -->
+      <p class="comparison-row-label">Sequence 9</p>
+      <div class="comparison-grid">
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_RADDet_test_006614to007592.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label real">Real Sequence 9</div>
         </div>
-        <p class="has-text-centered">Simulated Sequence 4</p>
-      </div>
-    </div>
-
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_RADDet_test_003043to003427.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
+        <div class="comparison-pair">
+          <video autoplay muted loop controls>
+            <source src="static/videos/part34/html_sim_data_RADDet_test_sim_006614to007592.mp4" type="video/mp4">
+          </video>
+          <div class="pair-label sim">Simulated Sequence 9</div>
         </div>
-        <p class="has-text-centered">Real Sequence 5</p>
       </div>
     </div>
 
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_sim_data_RADDet_test_sim_003043to003427.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
-        </div>
-        <p class="has-text-centered">Simulated Sequence 5</p>
-      </div>
-    </div>
-
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_RADDet_test_003660to004321.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
-        </div>
-        <p class="has-text-centered">Real Sequence 6</p>
-      </div>
-    </div>
-
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_sim_data_RADDet_test_sim_003660to004321.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
-        </div>
-        <p class="has-text-centered">Simulated Sequence 6</p>
-      </div>
-    </div>
-
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_RADDet_test_004333to005012.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
-        </div>
-        <p class="has-text-centered">Real Sequence 7</p>
-      </div>
-    </div>
-
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_sim_data_RADDet_test_sim_004333to005012.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
-        </div>
-        <p class="has-text-centered">Simulated Sequence 7</p>
-      </div>
-    </div>
-
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_RADDet_test_005019to005592.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
-        </div>
-        <p class="has-text-centered">Real Sequence 8</p>
-      </div>
-    </div>
-
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_sim_data_RADDet_test_sim_005019to005592.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
-        </div>
-        <p class="has-text-centered">Simulated Sequence 8</p>
-      </div>
-    </div>
-
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_RADDet_test_006614to007592.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
-        </div>
-        <p class="has-text-centered">Real Sequence 9</p>
-      </div>
-    </div>
-
-    <div class="video_wrapper" style="margin-bottom: 20px;">
-      <div class="video_container" style="margin: 0 auto; width: 80%;">
-        <video autoplay muted loop controls style="width: 100%;">
-          <source src="static/videos/part34/html_sim_data_RADDet_test_sim_006614to007592.mp4" type="video/mp4">
-        </video>
-                <div class="caption">
-          <div>Realistic driving scene in RADDet dataset.</div>
-        </div>
-        <p class="has-text-centered">Simulated Sequence 9</p>
-      </div>
-    </div>
-
-  </div>
-
-
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
+    <!-- BibTeX -->
+    <div class="section-card bibtex-box" id="bibtex">
+      <h2 class="section-title">BibTeX</h2>
       <pre><code>@article{xiao2025simulate,
   title={Simulate Any Radar: Attribute-Controllable Radar Simulation via Waveform Parameter Embedding},
   author={Xiao, Weiqing and Huang, Hao and Zhong, Chonghao and Lin, Yujie and Wang, Nan and Chen, Xiaoxue and Chen, Zhaoxi and Zhang, Saining and Yang, Shuocheng and Merriaux, Pierre and others},
@@ -845,8 +985,36 @@
   year={2025}
 }</code></pre>
     </div>
-  </section>
+
+  </div><!-- end .page-wrapper -->
+
+  <!-- ======== Footer ======== -->
+  <footer class="sa-footer">
+    SA-Radar &copy; 2025 &nbsp;|&nbsp;
+    <a href="https://arxiv.org/abs/2506.03134" target="_blank">arXiv</a> &nbsp;|&nbsp;
+    <a href="https://github.com/zhuxing0/SA-Radar" target="_blank">GitHub</a>
+  </footer>
+
+  <!-- ======== Back to top ======== -->
+  <button id="back-to-top" title="Back to top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script>
+    // Back-to-top button visibility
+    window.addEventListener('scroll', function() {
+      var btn = document.getElementById('back-to-top');
+      if (window.scrollY > 400) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    });
+
+    document.getElementById('back-to-top').addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 
 </body>
-
 </html>

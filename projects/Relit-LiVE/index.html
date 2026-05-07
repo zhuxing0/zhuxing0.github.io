@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Relit-LiVE: Relight Video by Jointly Learning Environment Video. A project page for physically consistent and temporally stable video relighting without camera pose priors.">
+  <meta name="keywords"
+    content="Relit-LiVE, video relighting, warped environment maps, diffusion rendering, SIGGRAPH 2026, neural rendering">
+  <meta property="og:title" content="Relit-LiVE: Relight Video by Jointly Learning Environment Video">
+  <meta property="og:description"
+    content="A SIGGRAPH 2026 project page for physically consistent, temporally stable video relighting with joint prediction of per-frame warped environment maps.">
+  <meta property="og:image" content="pr_images/human_videos_2_011_2_Pink_Sunrise.jpg">
+  <meta property="og:type" content="website">
+  <title>Relit-LiVE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/logos/icon.png">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+
+<body>
+  <div class="background-stage" aria-hidden="true">
+    <div class="background-grid" id="background-grid"></div>
+    <div class="background-vignette"></div>
+  </div>
+
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-mark"><img src="assets/logos/icon.png" alt="Relit-LiVE logo"></span>
+        <span class="brand-text">Relit-LiVE</span>
+      </div>
+      <nav class="site-nav">
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#motion-results">Motion Results</a>
+        <a href="#explorer">Explorer</a>
+        <a href="#applications">Applications</a>
+        <a href="#resources">Resources</a>
+      </nav>
+    </header>
+
+    <main>
+    <section class="hero-poster">
+      <div class="hero-poster-grid">
+        <div class="poster-copy">
+          <p class="eyebrow">SIGGRAPH Conference Papers 2026</p>
+          <h1 class="poster-title">Relit-LiVE</h1>
+          <p class="poster-subtitle">RELIGHT VIDEO BY JOINTLY LEARNING ENVIRONMENT VIDEO</p>
+          <div class="hero-actions poster-actions">
+            <a class="action-chip primary" href="assets/docs/siggraphconferencepapers26_163_main_paper.pdf" target="_blank" rel="noreferrer">Read Research Paper</a>
+            <a class="action-chip" href="assets/docs/siggraphconferencepapers26_163_supp.pdf" target="_blank" rel="noreferrer">Supplementary Material</a>
+            <a class="action-chip" href="https://github.com/zhuxing0/Relit-LiVE" target="_blank" rel="noreferrer">Code</a>
+          </div>
+          <p class="hero-summary poster-summary">
+            A physically consistent and temporally stable video relighting framework that jointly predicts relit videos and viewpoint-aligned per-frame warped environment maps, without requiring prior camera poses.
+          </p>
+          <p class="authors poster-authors">
+            Weiqing Xiao<sup>*</sup>, Hong Li<sup>*</sup>, Xiuyu Yang<sup>*</sup>, Houyuan Chen, Wenyi Li, Tianqi Liu, Shaocong Xu, Chongjie Ye, Hao Zhao<sup>&dagger;</sup>, Beibei Wang<sup>&dagger;</sup>
+          </p>
+          <p class="poster-author-note"><sup>*</sup> Equal contribution. <sup>&dagger;</sup> Corresponding authors.</p>
+          <div class="poster-affiliations" aria-label="Selected affiliations">
+            <div class="poster-affiliation-item">
+              <img class="poster-affiliation-logo poster-affiliation-logo-nju" src="assets/logos/nju-logo.png" alt="Nanjing University logo">
+              <span>Nanjing University</span>
+            </div>
+            <div class="poster-affiliation-item">
+              <img class="poster-affiliation-logo poster-affiliation-logo-baai" src="assets/logos/baai-logo.png" alt="BAAI logo">
+              <span>BAAI</span>
+            </div>
+            <div class="poster-affiliation-item">
+              <img class="poster-affiliation-logo poster-affiliation-logo-buaa" src="assets/logos/buaa-logo.png" alt="Beihang University logo">
+              <span>Beihang University</span>
+            </div>
+            <div class="poster-affiliation-item">
+              <img class="poster-affiliation-logo poster-affiliation-logo-tsinghua" src="assets/logos/tsinghua-logo.png" alt="Tsinghua University logo">
+              <span>Tsinghua University</span>
+            </div>
+          </div>
+          <a class="poster-arrow" href="#highlights" aria-label="Scroll to highlights">⌄</a>
+        </div>
+
+        <div class="hero-showcase">
+          <div class="hero-showcase-window">
+            <div class="hero-showcase-grid" id="hero-showcase-grid"></div>
+          </div>
+          <div class="hero-showcase-meta">
+            <div class="hero-showcase-meta-copy">
+              <p class="hero-showcase-kicker">Homepage Showcase</p>
+              <h3>High-Resolution Image and Video Relighting</h3>
+            </div>
+            <div class="hero-showcase-bar"><span></span></div>
+            <p>Supports 1024 x 1472 image relighting and 480 x 832 video relighting over 57-frame sequences, with original input panes marked separately for quick identification.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="content-section overview-section">
+      <div class="overview-top">
+        <div class="overview-main">
+          <div class="section-heading compact-heading">
+            <p class="eyebrow">Project Overview</p>
+            <h2>Why Relit-LiVE is different</h2>
+          </div>
+          <div class="section-card prose-card overview-lead-card">
+            <div class="overview-lead-split">
+              <div class="overview-lead-block">
+                <h3> Joint generation of relighting and environment video</h3>
+                <p>
+                  Relit-LiVE combines an RGB-intrinsic fusion renderer with lighting prediction, so relit frames and per-frame warped environment maps are generated together in one process.
+                </p>
+              </div>
+              <div class="overview-lead-block">
+                <h3>Designed around prior failure modes</h3>
+                <p>
+                  Direct relighting often breaks spatial consistency or keeps traces of the original illumination, while render-based alternatives usually rely on camera pose priors and accurate intrinsic decomposition.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="overview-sidebar">
+          <div class="section-card overview-datasets-card">
+            <p class="difference-kicker">Datasets</p>
+            <div class="overview-dataset-block">
+              <h3>Synthetic dataset</h3>
+              <p>
+                Built through a large-scale data synthesis workflow with rendered base colors, roughness, metallicness, normals, depth, environment maps, and camera trajectories.
+              </p>
+              <div class="overview-dataset-metrics">
+                <span><strong>10,000</strong> videos</span>
+                <span><strong>120</strong> frames each</span>
+              </div>
+            </div>
+            <div class="overview-dataset-block">
+              <h3>Real-world dataset</h3>
+              <p>
+                Collected from DL3DV, SpatialVID-HQ, MIT multi-illumination, HQ50K, RemovalBench, and SOBAv2, then filtered with a VLM and annotated with pseudo G-buffers and aligned environment maps.
+              </p>
+              <div class="overview-dataset-metrics">
+                <span><strong>13,000+</strong> video clips</span>
+                <span><strong>57</strong> frames per clip</span>
+                <span><strong>35,000+</strong> HQ images</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="overview-compare-head">
+        <p class="eyebrow">Architecture Comparison</p>
+        <h3>Two prior routes versus the Relit-LiVE pipeline</h3>
+      </div>
+
+      <div class="architecture-grid" aria-label="Architecture comparison between prior relighting routes and the Relit-LiVE pipeline">
+        <article class="architecture-card architecture-card-baseline">
+          <div class="architecture-card-head">
+            <p class="difference-kicker">Baseline A</p>
+            <h3>Prompt-based and direct relighting</h3>
+          </div>
+          <div class="architecture-media">
+            <img class="architecture-media-image" src="assets/figures/architecture-direct.png" alt="Extracted architecture crop showing the prompt-based and direct video relighting route">
+          </div>
+        </article>
+
+        <article class="architecture-card architecture-card-baseline">
+          <div class="architecture-card-head">
+            <p class="difference-kicker">Baseline B</p>
+            <h3>Env-maps and render-based relighting</h3>
+          </div>
+          <div class="architecture-media">
+            <img class="architecture-media-image" src="assets/figures/architecture-render.png" alt="Extracted architecture crop showing the environment-map and render-based relighting route">
+          </div>
+        </article>
+
+        <article class="architecture-card architecture-card-ours">
+          <div class="architecture-card-head">
+            <p class="difference-kicker">Relit-LiVE</p>
+            <h3>RGB-intrinsic fusion with warped environment maps</h3>
+          </div>
+          <div class="architecture-media">
+            <img class="architecture-media-image" src="assets/figures/architecture-ours.png" alt="Extracted architecture crop showing the Relit-LiVE architecture with RGB-intrinsic fusion renderer and per-frame warped environment map output">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="method" class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Technical Innovations</p>
+        <h2>Three core ingredients behind the method</h2>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-index">01</span>
+          <h3>RGB-intrinsic fusion renderer</h3>
+          <p>
+            Raw reference images are explicitly fused into the rendering pathway so the model can recover global
+            illumination cues and preserve delicate material appearance that intrinsic-only pipelines often lose.
+          </p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">02</span>
+          <h3>Per-frame warped environment map prediction</h3>
+          <p>
+            Relit frames and per-frame warped environment maps are generated in one diffusion process, enforcing strong
+            geometry-light alignment without explicit camera pose supervision.
+          </p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">03</span>
+          <h3>Robust multi-stage training</h3>
+          <p>
+            Latent interpolation synthesizes diverse multi-illumination supervision, while cycle-consistent
+            self-supervised illumination learning improves temporal coherence on real videos.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section timeline-section">
+      <div class="section-heading">
+        <p class="eyebrow">Temporal Consistency</p>
+        <h2>Relighting that holds up across long sequences</h2>
+      </div>
+      <div class="timeline-pdf-card section-card">
+        <div class="timeline-figure-link">
+          <img class="timeline-figure-image" src="assets/figures/figure_relit_long_seqs.png" alt="Official long-sequence relighting comparison figure from the paper">
+        </div>
+        <p class="timeline-pdf-caption">
+          Official figure from the paper showing comparison results for long video relighting sequences, including baseline methods, our relit outputs, and predicted environment maps.
+        </p>
+      </div>
+    </section>
+
+    <section id="motion-results" class="content-section motion-results-section">
+      <div class="section-heading">
+        <p class="eyebrow">Video Results</p>
+        <h2>High-motion relighting sequences</h2>
+      </div>
+      <div class="section-card intro-overlay">
+        <p>
+          These high-motion results highlight the joint generation of relit video and per-frame warped environment maps.
+        </p>
+      </div>
+      <div class="motion-compare-head" aria-hidden="true">
+        <span>Input Video</span>
+        <span>Relit Video</span>
+        <span>Warped Env Maps</span>
+      </div>
+      <div class="motion-compare-body">
+        <div class="motion-input-card">
+          <img class="motion-compare-gif" src="assets/videos/shared-input.gif" alt="Shared input video used across the four high-motion results">
+        </div>
+        <div class="motion-results-panel">
+          <div class="motion-result-row">
+            <span class="motion-result-badge">01</span>
+            <img class="motion-compare-gif" src="assets/videos/result-1-relit.gif" alt="First high-motion relit result">
+            <img class="motion-compare-gif" src="assets/videos/result-1-env.gif" alt="First generated warped environment map sequence">
+          </div>
+          <div class="motion-result-row">
+            <span class="motion-result-badge">02</span>
+            <img class="motion-compare-gif" src="assets/videos/result-2-relit.gif" alt="Second high-motion relit result">
+            <img class="motion-compare-gif" src="assets/videos/result-2-env.gif" alt="Second generated warped environment map sequence">
+          </div>
+          <div class="motion-result-row">
+            <span class="motion-result-badge">03</span>
+            <img class="motion-compare-gif" src="assets/videos/result-3-relit.gif" alt="Third high-motion relit result">
+            <img class="motion-compare-gif" src="assets/videos/result-3-env.gif" alt="Third generated warped environment map sequence">
+          </div>
+          <div class="motion-result-row">
+            <span class="motion-result-badge">04</span>
+            <img class="motion-compare-gif" src="assets/videos/result-4-relit.gif" alt="Fourth high-motion relit result">
+            <img class="motion-compare-gif" src="assets/videos/result-4-env.gif" alt="Fourth generated warped environment map sequence">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="explorer" class="content-section explorer-section">
+      <div class="section-heading">
+        <p class="eyebrow">Visual Showcase</p>
+        <h2>Browse results under different illumination targets</h2>
+      </div>
+
+      <div class="section-card intro-overlay">
+        <p>
+          Browse separate image and video showcases across multiple target illuminations, with dedicated cases for still-image relighting and temporally coherent video relighting.
+        </p>
+      </div>
+
+      <div class="showcase-split-grid">
+        <div class="showcase-group">
+          <div class="showcase-group-heading">
+            <p class="eyebrow">Image Showcase</p>
+            <h3>Representative still-image relighting cases</h3>
+          </div>
+          <div class="explorer-layout">
+            <aside class="scene-list" id="image-scene-list" aria-label="Image scene selection"></aside>
+
+            <div class="explorer-main">
+              <div class="image-compare-stage" id="image-compare-stage" style="--compare-position: 50%;">
+                <div class="compare-label compare-label-left">Input</div>
+                <div class="compare-label compare-label-right">Relit Output</div>
+                <img id="image-result-image" class="compare-image compare-image-base" src="pr_images/human_movies_science_fiction_3_0_Pink_Sunrise.jpg" alt="Selected image relit result">
+                <div class="compare-image-overlay" id="image-compare-overlay">
+                  <img id="image-input-image" class="compare-image compare-image-top" src="pr_images/human_movies_science_fiction_3_0.jpg" alt="Selected image input frame">
+                </div>
+                <div class="compare-divider" aria-hidden="true">
+                  <span class="compare-divider-handle"></span>
+                </div>
+                <input
+                  id="image-compare-slider"
+                  class="compare-slider"
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                  step="1"
+                  aria-label="Drag to compare Input and Relit Output"
+                >
+              </div>
+
+              <div class="lighting-panel">
+                <div>
+                  <p class="panel-label">Lighting preset</p>
+                  <div id="image-lighting-controls" class="lighting-controls"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-group">
+          <div class="showcase-group-heading">
+            <p class="eyebrow">Video Showcase</p>
+            <h3>Representative video relighting cases</h3>
+          </div>
+          <div class="explorer-layout">
+            <aside class="scene-list" id="video-scene-list" aria-label="Video scene selection"></aside>
+
+            <div class="explorer-main">
+              <p id="video-media-note" class="media-mode-note"></p>
+              <div class="explorer-stage">
+                <div class="stage-column">
+                  <span class="stage-label">Input Video</span>
+                  <img id="video-input-image" src="pr_images/human_movies_human_16_0.jpg" alt="Selected video input preview">
+                  <video id="video-input-video" class="stage-video" muted loop playsinline preload="metadata" aria-label="Selected input video"></video>
+                </div>
+                <div class="stage-column">
+                  <span class="stage-label">Relit Video</span>
+                  <img id="video-result-image" src="pr_images/human_movies_human_16_0_Daytime.jpg" alt="Selected relit video preview">
+                  <video id="video-result-video" class="stage-video" muted loop playsinline preload="metadata" aria-label="Selected relit video"></video>
+                </div>
+              </div>
+
+              <div class="lighting-panel">
+                <div>
+                  <p class="panel-label">Lighting preset</p>
+                  <div id="video-lighting-controls" class="lighting-controls"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="applications" class="content-section">
+      <div class="section-heading">
+        <p class="eyebrow">Applications</p>
+        <h2>Beyond a single relighting task</h2>
+      </div>
+      <div class="section-card intro-overlay">
+        <p>
+          Joint modeling of relit video and per-frame warped environment maps also supports downstream tasks that require coherent lighting control, including scene editing and video delighting.
+        </p>
+      </div>
+      <div class="application-showcase-grid">
+        <article class="application-card application-showcase-card">
+          <div class="application-showcase-media">
+            <img src="assets/figures/application-scene-editing.png" alt="Scene editing results showing original images and edited outputs under relit conditions">
+          </div>
+          <div class="application-showcase-copy">
+            <h3>Scene Editing</h3>
+            <p>
+              Relit-LiVE supports consistent edits to scene content while preserving geometry, illumination interactions, and overall visual coherence.
+            </p>
+          </div>
+        </article>
+        <article class="application-card application-showcase-card">
+          <div class="application-showcase-media">
+            <img src="assets/figures/application-video-delighting.png" alt="Video delighting results comparing source video frames and delighting outputs">
+          </div>
+          <div class="application-showcase-copy">
+            <h3>Video Delighting</h3>
+            <p>
+              The learned lighting representation can also remove baked-in illumination effects, producing cleaner appearance while maintaining temporal consistency across video frames.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="resources" class="content-section resource-section">
+      <div class="section-heading">
+        <p class="eyebrow">Resources</p>
+        <h2>Paper, supplement, and code</h2>
+      </div>
+      <div class="resource-grid">
+        <a class="resource-card" href="assets/docs/siggraphconferencepapers26_163_main_paper.pdf" target="_blank" rel="noreferrer">
+          <span class="resource-type">Paper</span>
+          <strong>Main paper PDF</strong>
+          <p>Full technical details, experiments, and analysis.</p>
+        </a>
+        <a class="resource-card" href="assets/docs/siggraphconferencepapers26_163_supp.pdf" target="_blank" rel="noreferrer">
+          <span class="resource-type">Supplement</span>
+          <strong>Supplementary material</strong>
+          <p>Additional experimental details, ablations, and visualizations.</p>
+        </a>
+        <a class="resource-card" href="https://github.com/zhuxing0/Relit-LiVE" target="_blank" rel="noreferrer">
+          <span class="resource-type">Code</span>
+          <strong>Official repository</strong>
+          <p>Project code, updates, and future release details.</p>
+        </a>
+      </div>
+    </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Relit-LiVE: Relight Video by Jointly Learning Environment Video</p>
+    </footer>
+  </div>
+
+  <script src="static/js/pr-image-manifest.js"></script>
+  <script src="static/js/index.js"></script>
+</body>
+
+</html>

@@ -28,6 +28,7 @@ const maxBackgroundVariantsPerBase = 6;
 const heroShowcasePlaybackTilesPerRow = 8;
 const heroShowcaseVisiblePlaybackPerRow = 2;
 const imageLoadState = new Map();
+const packagedLightMode = true;
 
 const imageSceneDefinitions = [
   {
@@ -575,6 +576,10 @@ function getVideoRelitPathFromImage(imagePath) {
 }
 
 async function filterExistingImagePaths(imagePaths) {
+  if (packagedLightMode) {
+    return imagePaths;
+  }
+
   const results = await Promise.all(
     imagePaths.map(async (imagePath) => ((await canLoadImage(imagePath)) ? imagePath : null))
   );
@@ -583,6 +588,10 @@ async function filterExistingImagePaths(imagePaths) {
 }
 
 async function filterExistingShowcasePanes(panes) {
+  if (packagedLightMode) {
+    return panes;
+  }
+
   const filteredPanes = [];
 
   for (const pane of panes) {
@@ -624,12 +633,12 @@ async function prepareScenes(definitions, options = {}) {
   const validScenes = [];
 
   for (const scene of definitions) {
-    if (!(await canLoadImage(scene.input))) {
+    if (!packagedLightMode && !(await canLoadImage(scene.input))) {
       continue;
     }
 
     const inputVideoPath = scene.inputVideoPath || getVideoInputPathFromImage(scene.input);
-    const hasInputVideo = await canLoadVideo(inputVideoPath);
+    const hasInputVideo = packagedLightMode ? Boolean(inputVideoPath) : await canLoadVideo(inputVideoPath);
 
     if (requireVideo && !hasInputVideo) {
       continue;
@@ -637,9 +646,9 @@ async function prepareScenes(definitions, options = {}) {
 
     const validLights = [];
     for (const light of scene.lights) {
-      if (await canLoadImage(light.image)) {
+      if (packagedLightMode || await canLoadImage(light.image)) {
         const lightVideoPath = light.videoPath || getVideoRelitPathFromImage(light.image);
-        const hasLightVideo = await canLoadVideo(lightVideoPath);
+        const hasLightVideo = packagedLightMode ? Boolean(lightVideoPath) : await canLoadVideo(lightVideoPath);
 
         if (requireVideo && !hasLightVideo) {
           continue;

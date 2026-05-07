@@ -256,28 +256,46 @@
       </div>
       <div class="motion-compare-body">
         <div class="motion-input-card">
-          <img class="motion-compare-gif" src="assets/videos/shared-input.gif" alt="Shared input video used across the four high-motion results">
+          <video class="motion-compare-gif" muted loop autoplay playsinline preload="metadata" aria-label="Shared input video used across the four high-motion results">
+            <source src="assets/videos/shared-input.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="motion-results-panel">
           <div class="motion-result-row">
             <span class="motion-result-badge">01</span>
-            <img class="motion-compare-gif" src="assets/videos/result-1-relit.gif" alt="First high-motion relit result">
-            <img class="motion-compare-gif" src="assets/videos/result-1-env.gif" alt="First generated warped environment map sequence">
+            <video class="motion-compare-gif" muted loop autoplay playsinline preload="metadata" aria-label="First high-motion relit result">
+              <source src="assets/videos/result-1-relit.mp4" type="video/mp4">
+            </video>
+            <video class="motion-compare-gif" muted loop autoplay playsinline preload="metadata" aria-label="First generated warped environment map sequence">
+              <source src="assets/videos/result-1-env.mp4" type="video/mp4">
+            </video>
           </div>
           <div class="motion-result-row">
             <span class="motion-result-badge">02</span>
-            <img class="motion-compare-gif" src="assets/videos/result-2-relit.gif" alt="Second high-motion relit result">
-            <img class="motion-compare-gif" src="assets/videos/result-2-env.gif" alt="Second generated warped environment map sequence">
+            <video class="motion-compare-gif" muted loop autoplay playsinline preload="metadata" aria-label="Second high-motion relit result">
+              <source src="assets/videos/result-2-relit.mp4" type="video/mp4">
+            </video>
+            <video class="motion-compare-gif" muted loop autoplay playsinline preload="metadata" aria-label="Second generated warped environment map sequence">
+              <source src="assets/videos/result-2-env.mp4" type="video/mp4">
+            </video>
           </div>
           <div class="motion-result-row">
             <span class="motion-result-badge">03</span>
-            <img class="motion-compare-gif" src="assets/videos/result-3-relit.gif" alt="Third high-motion relit result">
-            <img class="motion-compare-gif" src="assets/videos/result-3-env.gif" alt="Third generated warped environment map sequence">
+            <video class="motion-compare-gif" muted loop autoplay playsinline preload="metadata" aria-label="Third high-motion relit result">
+              <source src="assets/videos/result-3-relit.mp4" type="video/mp4">
+            </video>
+            <video class="motion-compare-gif" muted loop autoplay playsinline preload="metadata" aria-label="Third generated warped environment map sequence">
+              <source src="assets/videos/result-3-env.mp4" type="video/mp4">
+            </video>
           </div>
           <div class="motion-result-row">
             <span class="motion-result-badge">04</span>
-            <img class="motion-compare-gif" src="assets/videos/result-4-relit.gif" alt="Fourth high-motion relit result">
-            <img class="motion-compare-gif" src="assets/videos/result-4-env.gif" alt="Fourth generated warped environment map sequence">
+            <video class="motion-compare-gif" muted loop autoplay playsinline preload="metadata" aria-label="Fourth high-motion relit result">
+              <source src="assets/videos/result-4-relit.mp4" type="video/mp4">
+            </video>
+            <video class="motion-compare-gif" muted loop autoplay playsinline preload="metadata" aria-label="Fourth generated warped environment map sequence">
+              <source src="assets/videos/result-4-env.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
@@ -351,12 +369,12 @@
                 <div class="stage-column">
                   <span class="stage-label">Input Video</span>
                   <img id="video-input-image" src="pr_images/human_movies_human_16_0.jpg" alt="Selected video input preview">
-                  <video id="video-input-video" class="stage-video" muted loop playsinline preload="metadata" aria-label="Selected input video"></video>
+                  <video id="video-input-video" class="stage-video" muted loop playsinline preload="none" aria-label="Selected input video"></video>
                 </div>
                 <div class="stage-column">
                   <span class="stage-label">Relit Video</span>
                   <img id="video-result-image" src="pr_images/human_movies_human_16_0_Daytime.jpg" alt="Selected relit video preview">
-                  <video id="video-result-video" class="stage-video" muted loop playsinline preload="metadata" aria-label="Selected relit video"></video>
+                  <video id="video-result-video" class="stage-video" muted loop playsinline preload="none" aria-label="Selected relit video"></video>
                 </div>
               </div>
 

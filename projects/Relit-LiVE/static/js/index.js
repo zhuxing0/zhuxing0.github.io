@@ -1044,6 +1044,64 @@ window.addEventListener('resize', () => {
   startTileFramePlayback();
 });
 
+function initializeIntroVideos() {
+  const wrappers = document.querySelectorAll('[data-intro-video-wrapper]');
+
+  wrappers.forEach((wrapper) => {
+    const video = wrapper.querySelector('[data-intro-video]');
+    const trigger = wrapper.querySelector('[data-intro-video-trigger]');
+    let previewPrimed = false;
+
+    if (!video || !trigger) {
+      return;
+    }
+
+    const primePreviewFrame = () => {
+      if (previewPrimed || wrapper.classList.contains('is-playing')) {
+        return;
+      }
+
+      previewPrimed = true;
+      try {
+        video.currentTime = Math.min(0.05, Math.max(video.duration || 0, 0.05));
+      } catch {}
+    };
+
+    trigger.addEventListener('click', () => {
+      if (!wrapper.classList.contains('is-playing')) {
+        video.currentTime = 0;
+      }
+      video.play().catch(() => {});
+      video.controls = true;
+    });
+
+    video.addEventListener('loadeddata', primePreviewFrame, { once: true });
+
+    video.addEventListener('seeked', () => {
+      if (!wrapper.classList.contains('is-playing')) {
+        video.pause();
+      }
+    });
+
+    video.addEventListener('play', () => {
+      wrapper.classList.add('is-playing');
+      video.controls = true;
+    });
+
+    video.addEventListener('ended', () => {
+      wrapper.classList.remove('is-playing');
+      video.controls = false;
+      video.currentTime = 0;
+      previewPrimed = false;
+      primePreviewFrame();
+    });
+
+    if (video.readyState >= 2) {
+      primePreviewFrame();
+    }
+  });
+}
+
 async function initializePage() {
   const galleryAssets = await prepareGalleryAssets();
   orderedBackgroundImages = galleryAssets.backgroundImages;
@@ -1079,6 +1137,7 @@ async function initializePage() {
   });
 
   explorers.forEach(renderExplorer);
+  initializeIntroVideos();
 }
 
 initializePage();

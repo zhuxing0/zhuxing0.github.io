@@ -52,9 +52,9 @@
           <h1 class="poster-title">Relit-LiVE</h1>
           <p class="poster-subtitle">RELIGHT VIDEO BY JOINTLY LEARNING ENVIRONMENT VIDEO</p>
           <div class="hero-actions poster-actions">
+            <a class="action-chip primary" href="#intro-video">Watch Intro Video</a>
             <a class="action-chip primary" href="assets/docs/relit_live_paper.pdf" target="_blank" rel="noreferrer">Read Research Paper</a>
-            <a class="action-chip" href="assets/docs/relit_live_supp.pdf" target="_blank" rel="noreferrer">Supplementary Material</a>
-            <a class="action-chip" href="https://github.com/zhuxing0/Relit-LiVE" target="_blank" rel="noreferrer">Code</a>
+            <a class="action-chip primary" href="https://github.com/zhuxing0/Relit-LiVE" target="_blank" rel="noreferrer">Code</a>
           </div>
           <p class="hero-summary poster-summary">
             A physically consistent and temporally stable video relighting framework that jointly predicts relit videos and viewpoint-aligned per-frame warped environment maps, without requiring prior camera poses.
@@ -97,6 +97,21 @@
             <p>Supports 1024 x 1472 image relighting and 480 x 832 video relighting over 57-frame sequences, with original input panes marked separately for quick identification.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="intro-video" class="content-section intro-video-section">
+      <div class="section-heading compact-heading intro-video-heading">
+        <h2>Project Video</h2>
+      </div>
+      <div class="intro-video-shell" data-intro-video-wrapper>
+          <video class="intro-video-element" playsinline preload="auto" data-intro-video>
+            <source src="assets/videos/relit-live-intro-v3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <button class="intro-video-overlay" type="button" data-intro-video-trigger aria-label="Play overview video">
+            <span class="intro-video-play"></span>
+          </button>
       </div>
     </section>
 

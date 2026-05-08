@@ -563,6 +563,87 @@ main {
   border-color: transparent;
 }
 
+.intro-video-section {
+  padding-top: 0;
+}
+
+.intro-video-heading {
+  margin-bottom: 1rem;
+}
+
+.intro-video-heading h2 {
+  margin: 0;
+}
+
+.intro-video-shell {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow);
+}
+
+.intro-video-element {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+.intro-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  cursor: pointer;
+  color: var(--ink);
+  background: linear-gradient(180deg, rgba(6, 6, 6, 0.08) 0%, rgba(6, 6, 6, 0.16) 100%);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.intro-video-play {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(4, 4, 4, 0.52);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+.intro-video-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-38%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 18px solid #fff;
+}
+
+.intro-video-overlay:hover,
+.intro-video-overlay:focus-visible {
+  transform: scale(1.01);
+  outline: none;
+}
+
+.intro-video-shell.is-playing .intro-video-overlay {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .hero-visual {
   border-radius: var(--radius-xl);
   padding: 1rem;
@@ -1613,6 +1694,11 @@ main {
 
   .hero-showcase-window {
     min-height: 380px;
+  }
+
+  .intro-video-play {
+    width: 64px;
+    height: 64px;
   }
 
   .overview-compare-head {

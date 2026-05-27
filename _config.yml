@@ -74,7 +74,9 @@ exclude:
   - CHANGELOG
   - Capfile
   - Gemfile
+  - Gemfile.lock
   - Gruntfile.js
+  - README.md
   - Rakefile
   - config
   - gulpfile.js

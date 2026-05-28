@@ -39,6 +39,20 @@ Before joining Nanjing University, I received my M.S. and B.S. degrees from Beih
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">SIGGRAPH 2026 / ToG</div><img src='images/UniVid-X.png' alt="UniVidX teaser" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[UniVidX: A Unified Multimodal Framework for Versatile Video Generation via Diffusion Priors](https://houyuanchen111.github.io/UniVidX.github.io/)
+
+Houyuan Chen, Hong Li, Xianghao Kong, Tianrui Zhu, Shaocong Xu, **Weiqing Xiao**, Yuwei Guo, Chongjie Ye, Lvmin Zhang, Hao Zhao, Anyi Rao
+
+[[Paper]](papers/UniVid-X.pdf) [[Project]](https://houyuanchen111.github.io/UniVidX.github.io/)
+
+- A unified multimodal video generation framework that leverages video diffusion priors for flexible conditional generation.
+- Supports omni-directional generation across visual modalities with stochastic condition masking, decoupled gated LoRA, and cross-modal self-attention.
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026 Findings</div><video src='images/ctrl-rs.mp4' autoplay muted loop playsinline controls width="100%"></video></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -67,20 +81,6 @@ Hong Li\*, Chongjie Ye\*, Houyuan Chen, **Weiqing Xiao**, Ziyang Yan, Lixing Xia
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">SIGGRAPH 2026 / ToG</div><img src='images/UniVid-X.png' alt="UniVidX teaser" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[UniVidX: A Unified Multimodal Framework for Versatile Video Generation via Diffusion Priors](https://houyuanchen111.github.io/UniVidX.github.io/)
-
-Houyuan Chen, Hong Li, Xianghao Kong, Tianrui Zhu, Shaocong Xu, **Weiqing Xiao**, Yuwei Guo, Chongjie Ye, Lvmin Zhang, Hao Zhao, Anyi Rao
-
-[[Paper]](papers/UniVid-X.pdf) [[Project]](https://houyuanchen111.github.io/UniVidX.github.io/)
-
-- A unified multimodal video generation framework that leverages video diffusion priors for flexible conditional generation.
-- Supports omni-directional generation across visual modalities with stochastic condition masking, decoupled gated LoRA, and cross-modal self-attention.
-</div>
-</div>
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/bilateral-driving.png' alt="Bilateral Driving teaser" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -92,20 +92,6 @@ Nan Wang, Yuantao Chen, Lixing Xiao, **Weiqing Xiao**, Bohan Li, Zhaoxi Chen, Ch
 
 - Introduces multi-scale bilateral grids that unify appearance codes and bilateral grids.
 - Improves geometric accuracy in dynamic driving-scene Gaussian Splatting by reducing photometric-inconsistency artifacts.
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-ITS 2025</div><img src='images/sr-stereo.png' alt="SR-Stereo teaser" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[SR-Stereo & DAPE: Stepwise Regression and Pre-trained Edges for Practical Stereo Matching](https://github.com/zhuxing0/SR-Stereov1-DAPE)
-
-**Weiqing Xiao**, Wei Zhao
-
-[[Paper]](papers/SR-Stereo.pdf) [[Code]](https://github.com/zhuxing0/SR-Stereov1-DAPE)
-
-- Introduces stepwise regression for robust stereo matching across domains with different disparity distributions.
-- Proposes DAPE, a domain adaptation framework using pre-trained edge pseudo-labels to improve fine-tuning with sparse ground truth.
 </div>
 </div>
 
@@ -123,6 +109,20 @@ Nan Wang, Yuantao Chen, Lixing Xiao, **Weiqing Xiao**, Bohan Li, Zhaoxi Chen, Ch
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-ITS 2025</div><img src='images/sr-stereo.png' alt="SR-Stereo teaser" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[SR-Stereo & DAPE: Stepwise Regression and Pre-trained Edges for Practical Stereo Matching](https://github.com/zhuxing0/SR-Stereov1-DAPE)
+
+**Weiqing Xiao**, Wei Zhao
+
+[[Paper]](papers/SR-Stereo.pdf) [[Code]](https://github.com/zhuxing0/SR-Stereov1-DAPE)
+
+- Introduces stepwise regression for robust stereo matching across domains with different disparity distributions.
+- Proposes DAPE, a domain adaptation framework using pre-trained edge pseudo-labels to improve fine-tuning with sparse ground truth.
+</div>
+</div>
+
 # 🎖 Honors and Awards
 
 - *2025*, First-Class Doctoral Scholarship, Nanjing University.
@@ -135,7 +135,7 @@ Nan Wang, Yuantao Chen, Lixing Xiao, **Weiqing Xiao**, Bohan Li, Zhaoxi Chen, Ch
 
 - *2025 - Present*, Ph.D. student in Computer Science and Technology, Nanjing University.
 - *2022 - 2025*, M.S. in Information and Communication Engineering, School of Electronic and Information Engineering, Beihang University.
-- *2018 - 2022*, B.S. in Electronic and Information Engineering, School of Advanced Engineering, Beihang University.
+- *2018 - 2022*, B.S. in Electronic and Information Engineering, Shenyuan Honors College, Beihang University.
 
 # 💻 Projects
 

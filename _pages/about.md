@@ -18,49 +18,96 @@ Before joining Nanjing University, I received my M.S. and B.S. degrees from Beih
 
 # 🔥 News
 
-- *2026*: One paper accepted by SIGGRAPH 2026.
-- *2026*: One paper accepted by CVPR 2026 Findings and one paper selected as a CVPR 2026 Highlight.
+- *2026*: Relit-LiVE and UniVidX were accepted to SIGGRAPH 2026.
+- *2026*: Ctrl-RS was accepted to CVPR 2026, and NeAR was selected as a CVPR 2026 Highlight.
+- *2025*: Unifying Appearance Codes and Bilateral Grids for Driving Scene Gaussian Splatting was accepted to NeurIPS 2025.
 - *2025*: Started Ph.D. study at Nanjing University.
 
 # 📝 Publications
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">SIGGRAPH 2026</div><img src='images/500x300.png' alt="Relit-LiVE" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">SIGGRAPH 2026</div><video src='images/relit-live.mp4' autoplay muted loop playsinline controls width="100%"></video></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Relit-LiVE: Relight Video by Jointly Learning Environment Video](https://github.com/zhuxing0/Relit-LiVE)
+[Relit-LiVE: Relight Video by Jointly Learning Environment Video](https://zhuxing0.github.io/projects/Relit-LiVE/)
 
-**Weiqing Xiao**, Hong Li, Hao Zhao, Beibei Wang
+**Weiqing Xiao**\*, Hong Li\*, Xiuyu Yang\*, Houyuan Chen, Wenyi Li, Tianqi Liu, Shaocong Xu, Chongjie Ye, Hao Zhao, Beibei Wang
 
-- A video relighting framework that jointly generates relit videos and environment videos for physically consistent and temporally stable results.
+[[Paper]](papers/Relit-LiVE.pdf) [[Project]](https://zhuxing0.github.io/projects/Relit-LiVE/) [[Code]](https://github.com/zhuxing0/Relit-LiVE)
+
+- A video relighting framework that jointly predicts relit videos and viewpoint-aligned environment videos.
+- Produces physically consistent and temporally stable relighting without requiring prior camera poses.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><img src='images/500x300.png' alt="Ctrl-RS" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><video src='images/ctrl-rs.mp4' autoplay muted loop playsinline controls width="100%"></video></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Simulate Any Radar: Attribute-Controllable Radar Simulation via Waveform Parameter Embedding](https://github.com/zhuxing0/Ctrl-RS)
+[Simulate Any Radar: Attribute-Controllable Radar Simulation via Waveform Parameter Embedding](https://zhuxing0.github.io/projects/SA-Radar/)
 
-**Weiqing Xiao**, Hao Huang, Chonghao Zhong, Hao Zhao
+**Weiqing Xiao**\*, Hao Huang\*, Chonghao Zhong\*, Yujie Lin, Nan Wang, Xiaoxue Chen, Zhaoxi Chen, Saining Zhang, Shuocheng Yang, Pierre Merriaux, Lei Lei, Hao Zhao
 
-- A controllable radar cube simulation framework supporting radar attribute editing, object removal, and new-trajectory rendering.
+[[Paper]](papers/Ctrl-RS.pdf) [[Project]](https://zhuxing0.github.io/projects/SA-Radar/) [[Code]](https://github.com/zhuxing0/SA-Radar)
+
+- A controllable radar cube simulation framework conditioned on customizable radar attributes.
+- Supports radar attribute editing, actor removal, novel trajectories, and improves downstream perception tasks.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-ITS 2025</div><img src='images/500x300.png' alt="SR-Stereo" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026 Highlight</div><video src='images/NEAR.mp4' autoplay muted loop playsinline controls width="100%"></video></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Stepwise Regression and Pre-trained Edge for Robust Stereo Matching](https://github.com/zhuxing0/SR-Stereov1-DAPE)
+[NeAR: Coupled Neural Asset-Renderer Stack](https://near-project.github.io/)
 
-**Weiqing Xiao**, Wei Zhao
+Hong Li\*, Chongjie Ye\*, Houyuan Chen, **Weiqing Xiao**, Ziyang Yan, Lixing Xiao, Zhaoxi Chen, Jianfeng Xiang, Shaocong Xu, Xuhui Liu, Yikai Wang, Baochang Zhang, Xiaoguang Han, Jiaolong Yang, Hao Zhao
 
-- A robust stereo matching method using stepwise disparity regression and edge-guided adaptation for better cross-domain generalization.
+[[Paper]](papers/NeAR.pdf) [[Project]](https://near-project.github.io/)
+
+- Couples a lighting-homogenized neural asset representation with a lighting-aware neural renderer.
+- Enables single-image relightable 3D generation, novel-view relighting, and material-aware rendering.
 </div>
 </div>
 
-- [NeAR: Coupled Neural Asset-Renderer Stack](#), Hong Li, Chongjie Ye, Houyuan Chen, **Weiqing Xiao**, Hao Zhao, **CVPR 2026 Highlight**.
-- [UniVidX: A Unified Multimodal Framework for Versatile Video Generation](#), Houyuan Chen, Hong Li, **Weiqing Xiao**, Hao Zhao, **SIGGRAPH 2026 / ToG**.
-- [Unifying Appearance Codes and Bilateral Grids for Driving Scene](#), Nan Wang, Yuantao Chen, Lixing Xiao, **Weiqing Xiao**, Hao Zhao, **NeurIPS 2025**.
-- [Uncertainty-Guided Iterative Architecture for Stereo Matching](#), **Weiqing Xiao**, Fengjun Zhong, Hao Zhao, **ICME 2025**.
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">SIGGRAPH 2026 / ToG</div><img src='images/UniVid-X.png' alt="UniVidX teaser" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[UniVidX: A Unified Multimodal Framework for Versatile Video Generation via Diffusion Priors](https://houyuanchen111.github.io/UniVidX.github.io/)
+
+Houyuan Chen, Hong Li, Xianghao Kong, Tianrui Zhu, Shaocong Xu, **Weiqing Xiao**, Yuwei Guo, Chongjie Ye, Lvmin Zhang, Hao Zhao, Anyi Rao
+
+[[Paper]](papers/UniVid-X.pdf) [[Project]](https://houyuanchen111.github.io/UniVidX.github.io/)
+
+- A unified multimodal video generation framework that leverages video diffusion priors for flexible conditional generation.
+- Supports omni-directional generation across visual modalities with stochastic condition masking, decoupled gated LoRA, and cross-modal self-attention.
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/bilateral-driving.png' alt="Bilateral Driving teaser" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Unifying Appearance Codes and Bilateral Grids for Driving Scene Gaussian Splatting](https://bigcileng.github.io/bilateral-driving/)
+
+Nan Wang, Yuantao Chen, Lixing Xiao, **Weiqing Xiao**, Bohan Li, Zhaoxi Chen, Chongjie Ye, Shaocong Xu, Saining Zhang, Ziyang Yan, Pierre Merriaux, Lei Lei, Tianfan Xue, Hao Zhao
+
+[[Paper]](papers/bilateral-driving.pdf) [[Project]](https://bigcileng.github.io/bilateral-driving/)
+
+- Introduces multi-scale bilateral grids that unify appearance codes and bilateral grids.
+- Improves geometric accuracy in dynamic driving-scene Gaussian Splatting by reducing photometric-inconsistency artifacts.
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICME 2025</div><img src='images/UGIA-Stereo.png' alt="UGIA-Stereo teaser" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Uncertainty-Guided Iterative Architecture for Stereo Matching](papers/UGIA-Stereo.pdf)
+
+**Weiqing Xiao**, Fengjun Zhong, Hao Zhao
+
+[[Paper]](papers/UGIA-Stereo.pdf)
+
+- Introduces lightweight cost-volume-based disparity uncertainty estimation for iterative stereo matching.
+- Uses uncertainty-guided update control and disparity rectification to improve stability, accuracy, and inference efficiency.
+</div>
+</div>
 
 # 🎖 Honors and Awards
 

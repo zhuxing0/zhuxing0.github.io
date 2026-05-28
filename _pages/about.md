@@ -10,7 +10,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a Ph.D. student at the School of Artificial Intelligence, Nanjing University. My research interests include generative world models, controllable video generation, 4D spatial memory, radar simulation, and visual scene understanding.
+I am a Ph.D. student at Nanjing University. My research interests include generative world models, controllable video generation, 4D spatial memory, radar simulation, and visual scene understanding.
 
 Before joining Nanjing University, I received my M.S. and B.S. degrees from Beihang University. My previous research covered stereo matching, autonomous driving perception, radar cube simulation, video relighting, and neural rendering.
 
@@ -19,8 +19,8 @@ Before joining Nanjing University, I received my M.S. and B.S. degrees from Beih
 # 🔥 News
 
 - *2026*: Relit-LiVE and UniVidX were accepted to SIGGRAPH 2026.
-- *2026*: Ctrl-RS was accepted to CVPR 2026, and NeAR was selected as a CVPR 2026 Highlight.
-- *2025*: Unifying Appearance Codes and Bilateral Grids for Driving Scene Gaussian Splatting was accepted to NeurIPS 2025.
+- *2026*: Ctrl-RS was accepted to CVPR 2026 Findings, and NeAR was selected as a CVPR 2026 Highlight.
+- *2025*: Bilateral-Driving was accepted to NeurIPS 2025 before my Ph.D. study.
 - *2025*: Started Ph.D. study at Nanjing University.
 
 # 📝 Publications
@@ -39,7 +39,7 @@ Before joining Nanjing University, I received my M.S. and B.S. degrees from Beih
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><video src='images/ctrl-rs.mp4' autoplay muted loop playsinline controls width="100%"></video></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026 Findings</div><video src='images/ctrl-rs.mp4' autoplay muted loop playsinline controls width="100%"></video></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Simulate Any Radar: Attribute-Controllable Radar Simulation via Waveform Parameter Embedding](https://zhuxing0.github.io/projects/SA-Radar/)
@@ -84,7 +84,7 @@ Houyuan Chen, Hong Li, Xianghao Kong, Tianrui Zhu, Shaocong Xu, **Weiqing Xiao**
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/bilateral-driving.png' alt="Bilateral Driving teaser" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Unifying Appearance Codes and Bilateral Grids for Driving Scene Gaussian Splatting](https://bigcileng.github.io/bilateral-driving/)
+[Bilateral-Driving](https://bigcileng.github.io/bilateral-driving/)
 
 Nan Wang, Yuantao Chen, Lixing Xiao, **Weiqing Xiao**, Bohan Li, Zhaoxi Chen, Chongjie Ye, Shaocong Xu, Saining Zhang, Ziyang Yan, Pierre Merriaux, Lei Lei, Tianfan Xue, Hao Zhao
 
@@ -92,6 +92,20 @@ Nan Wang, Yuantao Chen, Lixing Xiao, **Weiqing Xiao**, Bohan Li, Zhaoxi Chen, Ch
 
 - Introduces multi-scale bilateral grids that unify appearance codes and bilateral grids.
 - Improves geometric accuracy in dynamic driving-scene Gaussian Splatting by reducing photometric-inconsistency artifacts.
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">T-ITS 2025</div><img src='images/sr-stereo.png' alt="SR-Stereo teaser" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[SR-Stereo & DAPE: Stepwise Regression and Pre-trained Edges for Practical Stereo Matching](https://github.com/zhuxing0/SR-Stereov1-DAPE)
+
+**Weiqing Xiao**, Wei Zhao
+
+[[Paper]](papers/SR-Stereo.pdf) [[Code]](https://github.com/zhuxing0/SR-Stereov1-DAPE)
+
+- Introduces stepwise regression for robust stereo matching across domains with different disparity distributions.
+- Proposes DAPE, a domain adaptation framework using pre-trained edge pseudo-labels to improve fine-tuning with sparse ground truth.
 </div>
 </div>
 
@@ -113,13 +127,13 @@ Nan Wang, Yuantao Chen, Lixing Xiao, **Weiqing Xiao**, Bohan Li, Zhaoxi Chen, Ch
 
 - *2025*, First-Class Doctoral Scholarship, Nanjing University.
 - *2023, 2024*, First-Class Graduate Academic Scholarship, Beihang University.
-- *2023*, IEEE/ACM DAC System Design Contest, GPU Track, 1st Place.
-- *2023*, IEEE/ACM DAC System Design Contest, FPGA Track, 3rd Place.
+- *2023*, IEEE/ACM DAC System Design Contest, GPU Track, 1st Place. [[Certificate]](papers/DAC-GPU.png)
+- *2023*, IEEE/ACM DAC System Design Contest, FPGA Track, 3rd Place. [[Certificate]](papers/DAC-FPGA.png)
 - *2022*, Outstanding Graduate, Beihang University.
 
 # 📖 Educations
 
-- *2025 - Present*, Ph.D. student in Computer Science and Technology, School of Artificial Intelligence, Nanjing University.
+- *2025 - Present*, Ph.D. student in Computer Science and Technology, Nanjing University.
 - *2022 - 2025*, M.S. in Information and Communication Engineering, School of Electronic and Information Engineering, Beihang University.
 - *2018 - 2022*, B.S. in Electronic and Information Engineering, School of Advanced Engineering, Beihang University.
 
@@ -128,4 +142,4 @@ Nan Wang, Yuantao Chen, Lixing Xiao, **Weiqing Xiao**, Bohan Li, Zhaoxi Chen, Ch
 - *2025 - 2026*, Controllable world models, Beijing Academy of Artificial Intelligence.
 - *2024 - 2025*, Attribute-controllable radar simulation for autonomous driving scenes, Tsinghua AIR.
 - *2023 - 2024*, High-speed train fault detection with visual inspection models.
-- *2023*, Lightweight detection model design and deployment acceleration for the DAC System Design Contest.
+- *2023*, Lightweight detection model design and deployment acceleration for the DAC System Design Contest. [[GPU Certificate]](papers/DAC-GPU.png) [[FPGA Certificate]](papers/DAC-FPGA.png)

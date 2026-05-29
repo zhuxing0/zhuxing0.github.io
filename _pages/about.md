@@ -84,7 +84,7 @@ Hong Li\*, Chongjie Ye\*, Houyuan Chen, **Weiqing Xiao**, Ziyang Yan, Lixing Xia
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/bilateral-driving.png' alt="Bilateral Driving teaser" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Bilateral-Driving](https://bigcileng.github.io/bilateral-driving/)
+[Unifying Appearance Codes and Bilateral Grids for Driving Scene Gaussian Splatting](https://bigcileng.github.io/bilateral-driving/)
 
 Nan Wang, Yuantao Chen, Lixing Xiao, **Weiqing Xiao**, Bohan Li, Zhaoxi Chen, Chongjie Ye, Shaocong Xu, Saining Zhang, Ziyang Yan, Pierre Merriaux, Lei Lei, Tianfan Xue, Hao Zhao
 

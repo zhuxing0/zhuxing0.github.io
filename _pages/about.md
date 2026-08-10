@@ -14,14 +14,13 @@ I am a Ph.D. student at Nanjing University. My research interests include genera
 
 Before joining Nanjing University, I received my M.S. and B.S. degrees from Beihang University. My previous research covered stereo matching, autonomous driving perception, radar cube simulation, video relighting, and neural rendering.
 
-[[CV]](files/cv.pdf) [[GitHub]](https://github.com/zhuxing0)
+[[GitHub]](https://github.com/zhuxing0)
 
 # 🔥 News
 
 - *2026*: Relit-LiVE and UniVidX were accepted to SIGGRAPH 2026.
 - *2026*: Ctrl-RS was accepted to CVPR 2026 Findings, and NeAR was selected as a CVPR 2026 Highlight.
-- *2025*: Bilateral-Driving was accepted to NeurIPS 2025 before my Ph.D. study.
-- *2025*: Started Ph.D. study at Nanjing University.
+- *2025*: Bilateral-Driving was accepted to NeurIPS 2025.
 
 # 📝 Publications
 
@@ -133,9 +132,9 @@ Nan Wang, Yuantao Chen, Lixing Xiao, **Weiqing Xiao**, Bohan Li, Zhaoxi Chen, Ch
 
 # 📖 Educations
 
-- *2025 - Present*, Ph.D. student in Computer Science and Technology, Nanjing University.
-- *2022 - 2025*, M.S. in Information and Communication Engineering, School of Electronic and Information Engineering, Beihang University.
-- *2018 - 2022*, B.S. in Electronic and Information Engineering, Shenyuan Honors College, Beihang University.
+- Ph.D. student in Computer Science and Technology, Nanjing University.
+- M.S. in Information and Communication Engineering, School of Electronic and Information Engineering, Beihang University.
+- B.S. in Electronic and Information Engineering, Shenyuan Honors College, Beihang University.
 
 # 💻 Projects
 

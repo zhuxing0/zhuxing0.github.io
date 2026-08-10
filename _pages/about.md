@@ -10,7 +10,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a Ph.D. student at Nanjing University. My research interests include generative world models, controllable video generation, 4D spatial memory, radar simulation, and visual scene understanding.
+My research interests include generative world models, controllable video generation, 4D spatial memory, radar simulation, and visual scene understanding.
 
 Before joining Nanjing University, I received my M.S. and B.S. degrees from Beihang University. My previous research covered stereo matching, autonomous driving perception, radar cube simulation, video relighting, and neural rendering.
 
@@ -132,7 +132,7 @@ Nan Wang, Yuantao Chen, Lixing Xiao, **Weiqing Xiao**, Bohan Li, Zhaoxi Chen, Ch
 
 # 📖 Educations
 
-- Ph.D. student in Computer Science and Technology, Nanjing University.
+- Ph.D. program in Computer Science and Technology, Nanjing University.
 - M.S. in Information and Communication Engineering, School of Electronic and Information Engineering, Beihang University.
 - B.S. in Electronic and Information Engineering, Shenyuan Honors College, Beihang University.
 
